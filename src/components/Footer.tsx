@@ -19,7 +19,7 @@ const Footer = () => (
             Architecting high-performance digital ecosystems through bespoke software engineering and artificial intelligence.
           </p>
           <div className="flex gap-5 mt-8">
-            <a href="#" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/aethernetics-ai/" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" strokeWidth={1.5} />
             </a>
             <a href="https://www.instagram.com/aethernetics?igsh=amxwajF5OWY1em8y" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="Instagram">
