@@ -25,7 +25,7 @@ const Footer = () => (
             <a href="https://www.instagram.com/aethernetics?igsh=amxwajF5OWY1em8y" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="Instagram">
               <Instagram className="w-5 h-5" strokeWidth={1.5} />
             </a>
-            <a href="#" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="X">
+            <a href="https://x.com/Aethernetics_" className="text-[#1A1A1A] hover:text-[#D4AF37] transition-colors" aria-label="X">
               <XIcon className="w-4 h-4 mt-0.5" />
             </a>
           </div>
