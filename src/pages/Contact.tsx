@@ -28,6 +28,11 @@ const Contact = () => {
           email: form.email,
           company: form.company,
           message: form.message,
+          cc_emails: [
+            "kaadesh18001@gmail.com",
+            "utsavjain132@gmail.com",
+            "divyanshbhardwaj105@gmail.com",
+          ].join(","),
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
