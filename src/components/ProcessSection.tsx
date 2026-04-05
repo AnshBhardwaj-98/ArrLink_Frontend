@@ -26,31 +26,32 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section id="process" className="relative py-32 px-6 bg-[#FDFCFB] overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="text-center mb-24">
-        <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 font-semibold text-[#888]">
-          Methodology
+  <section id="process" className="relative py-32 px-6 bg-surface-lowest overflow-hidden">
+    <div className="max-w-4xl mx-auto px-4">
+      <div className="mb-24">
+        <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 font-bold text-primary">
+          The Atelier Way
         </p>
-        <h2 className="text-4xl md:text-6xl text-[#1A1A1A] font-serif mb-8">
-          A Refined <span className="italic font-medium text-[#D4AF37]">Approach</span>
+        <h2 className="text-4xl md:text-6xl text-on-surface font-display font-bold">
+          Methodology
         </h2>
-        <div className="w-16 h-px bg-[#D4AF37]/40 mx-auto" />
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+      <div className="relative space-y-20 pl-10 border-l border-border/10">
         {steps.map((s, i) => (
           <div key={s.label} className="relative group">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-2xl font-serif italic text-[#D4AF37]/40 group-hover:text-[#D4AF37] transition-colors duration-500">0{i + 1}</span>
-              <div className="h-px flex-1 bg-gray-100 group-hover:bg-[#D4AF37]/20 transition-colors" />
+            {/* Timeline Circle */}
+            <div className={`absolute -left-[51px] top-0 w-5 h-5 rounded-full border-2 ${i === 0 ? 'bg-primary border-primary' : 'bg-surface-lowest border-border/40'} z-10`} />
+            
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-primary">Phase 0{i + 1}</span>
+              <h3 className="text-2xl font-display font-bold text-on-surface group-hover:text-primary transition-colors duration-300">
+                {s.label}
+              </h3>
+              <p className="text-on-surface/60 text-lg leading-relaxed font-sans font-normal max-w-2xl">
+                {s.desc}
+              </p>
             </div>
-            <h3 className="text-xl font-serif font-bold text-[#1A1A1A] mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
-              {s.label}
-            </h3>
-            <p className="text-[#666] leading-relaxed font-sans font-light">
-              {s.desc}
-            </p>
           </div>
         ))}
       </div>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-container": "#454545",
+                    "surface-tint": "#e9c349",
+                    "primary-fixed": "#ffe088",
+                    "on-primary-container": "#554300",
+                    "secondary": "#c8c6c5",
+                    "on-error": "#690005",
+                    "on-secondary-container": "#b7b5b4",
+                    "surface-container": "#20201f",
+                    "primary": "#f2ca50",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "on-secondary": "#313030",
+                    "on-tertiary": "#303031",
+                    "on-primary": "#3c2f00",
+                    "inverse-primary": "#735c00",
+                    "on-surface-variant": "#d0c5af",
+                    "surface": "#131313",
+                    "surface-bright": "#393939",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed": "#e4e2e2",
+                    "secondary-container": "#474746",
+                    "surface-variant": "#353535",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-container": "#b4b3b3",
+                    "background": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#d4af37",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-fixed": "#241a00",
+                    "outline-variant": "#4d4635",
+                    "on-secondary-fixed-variant": "#474746",
+                    "inverse-on-surface": "#313030",
+                    "tertiary": "#d0cece",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-dim": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "outline": "#99907c",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "surface-container-highest": "#353535",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed-variant": "#574500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 53, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .tonal-shift-bg {
+            background: linear-gradient(180deg, #131313 0%, #0e0e0e 100%);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(242, 202, 80, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(242, 202, 80, 0.05), transparent 30%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-900/60 backdrop-blur-xl shadow-[0_40px_40px_rgba(229,226,225,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-400" data-icon="grid_view">grid_view</span>
+<h1 class="text-2xl font-bold tracking-tighter text-amber-400 font-['Space_Grotesk'] tracking-tight">Aethernetics</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-400" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Breadcrumb Navigation -->
+<nav class="px-8 py-4 flex items-center gap-2 text-[0.75rem] font-medium tracking-widest uppercase text-on-surface-variant">
+<span class="text-primary">Home</span>
+<span class="material-symbols-outlined text-[1rem]" data-icon="chevron_right">chevron_right</span>
+<span class="opacity-50">Overview</span>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex flex-col justify-center px-8 hero-gradient">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full opacity-20" data-alt="Abstract futuristic digital network with flowing particles and glowing lines in deep gold and dark slate tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFobsaVyXl0xVzfMhML3DDtf2Me1RXRXFNIOwCGZ3NvD-IE5Fk-ytilo3-4gwfwHhpoMNsGDv8z23KGp1_8Y5pefUfq87VYePnQjAu2siJa4jXhXB60HH8UuZUOstdAN39FXlESiAZm5yBvyCit7R_VhBUhBrBXC_oSZXstbKAJ_BMsDA-RVx9tndyI4804cc7RBleLYoQ6oJWgoF7BagO120o28by3T435zcyOrEnHk_zNy756hIHnj_2llquklvSidmXaV8NRhi'); background-size: cover; background-position: center;">
+</div>
+</div>
+<div class="relative z-10 space-y-8">
+<div class="inline-block px-4 py-1.5 glass-panel rounded-full border border-outline-variant/20">
+<span class="text-[0.65rem] font-bold tracking-[0.2em] text-primary uppercase">Engineering Atelier</span>
+</div>
+<h2 class="text-[3.5rem] leading-[1.1] font-bold font-headline tracking-tighter text-on-background">
+                    Transforming <br/>Businesses <br/><span class="text-primary italic">with Intelligence</span>
+</h2>
+<p class="text-on-surface-variant max-w-md text-lg leading-relaxed font-light">
+                    Architecting the future of enterprise through high-fidelity artificial intelligence and bespoke digital engineering.
+                </p>
+<div class="flex flex-col gap-4 pt-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold py-5 rounded-md transition-transform active:scale-95 shadow-lg">
+                        Schedule Consultation
+                    </button>
+<button class="w-full glass-panel border border-outline-variant/30 text-on-surface py-5 rounded-md font-medium transition-all hover:bg-surface-variant/40">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+</section>
+<!-- Key Services Section (Bento Grid Style) -->
+<section class="px-8 py-24 space-y-12">
+<div class="space-y-4">
+<h3 class="text-[1.75rem] font-headline font-medium">Core Intelligence</h3>
+<div class="h-1 w-12 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- AI Solutions -->
+<div class="group relative bg-surface-container rounded-xl overflow-hidden p-8 border border-outline-variant/10 transition-all hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="neurology">neurology</span>
+</div>
+<span class="material-symbols-outlined text-primary mb-6 block" data-icon="psychology">psychology</span>
+<h4 class="text-xl font-bold font-headline mb-3">AI Solutions</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Neural architectures designed for predictive operational excellence and automated decisioning.</p>
+</div>
+<!-- Software Development -->
+<div class="group relative bg-surface-container rounded-xl overflow-hidden p-8 border border-outline-variant/10 transition-all hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="terminal">terminal</span>
+</div>
+<span class="material-symbols-outlined text-primary mb-6 block" data-icon="code">code</span>
+<h4 class="text-xl font-bold font-headline mb-3">Software Development</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">High-performance codebases engineered for scalability, security, and technical longevity.</p>
+</div>
+<!-- SaaS -->
+<div class="group relative bg-surface-container rounded-xl overflow-hidden p-8 border border-outline-variant/10 transition-all hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="cloud_done">cloud_done</span>
+</div>
+<span class="material-symbols-outlined text-primary mb-6 block" data-icon="cloud">cloud</span>
+<h4 class="text-xl font-bold font-headline mb-3">SaaS</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Cloud-native ecosystems that redefine user experience and operational efficiency.</p>
+</div>
+<!-- Enterprise Solutions -->
+<div class="group relative bg-surface-container rounded-xl overflow-hidden p-8 border border-outline-variant/10 transition-all hover:bg-surface-container-high">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="hub">hub</span>
+</div>
+<span class="material-symbols-outlined text-primary mb-6 block" data-icon="business_center">business_center</span>
+<h4 class="text-xl font-bold font-headline mb-3">Enterprise Solutions</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Unified digital strategies for complex global infrastructures and data governance.</p>
+</div>
+</div>
+</section>
+<!-- Methodology Section -->
+<section class="bg-surface-container-lowest py-24 px-8">
+<div class="space-y-4 mb-16">
+<span class="text-[0.75rem] font-bold text-primary tracking-[0.3em] uppercase">The Atelier Way</span>
+<h3 class="text-3xl font-headline font-bold">Methodology</h3>
+</div>
+<div class="space-y-16">
+<!-- Step 1 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<h5 class="text-xs font-bold text-primary mb-4 uppercase tracking-widest">Phase 01</h5>
+<h4 class="text-xl font-headline font-bold mb-3">Strategic Discovery</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">We dismantle existing paradigms to identify the architectural ether of your business challenges.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline"></div>
+<h5 class="text-xs font-bold text-on-surface-variant mb-4 uppercase tracking-widest">Phase 02</h5>
+<h4 class="text-xl font-headline font-bold mb-3">Conceptual Architecture</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Drafting blueprints for high-impact intelligence integration and structural scalability.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-12 border-l border-outline-variant/30">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface-container-highest border-2 border-outline"></div>
+<h5 class="text-xs font-bold text-on-surface-variant mb-4 uppercase tracking-widest">Phase 03</h5>
+<h4 class="text-xl font-headline font-bold mb-3">Iterative Synthesis</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Rapid engineering cycles that merge cutting-edge AI with robust software foundations.</p>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-24 px-8 overflow-hidden">
+<p class="text-center text-[0.65rem] font-bold text-on-surface-variant uppercase tracking-[0.4em] mb-12">Trusted by Global Innovators</p>
+<div class="grid grid-cols-2 gap-12 items-center opacity-40 grayscale transition-all hover:grayscale-0 hover:opacity-80">
+<div class="flex justify-center">
+<img alt="Partner Logo" class="h-6 object-contain" data-alt="Simplified monochrome corporate logo for a major tech company." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXCzcsSL-gaURKPNUr9ao7uBQd3zshfFTAh4eLdgkEjswFqpxaRI0Y5kZ3Xp_g6YCBYvLUwQ-wGsaGDF_3hMKKtW2jK50Ta1FF1JdA-aCbg98m-jpKkcIk-yIomWLyXzAlopvIsLFvUi3YJglQHH5N0UGzCxQ0IfhdCmzEyq18UfGsY-3CbbgynJBP0TZtYvTjIRNtFkmzYYCd711TRBHQFjitwkt90Y743nR0q7m1z_CAI7tolqlAhnExD_GJHv7wztSFioZzetaB"/>
+</div>
+<div class="flex justify-center">
+<img alt="Partner Logo" class="h-6 object-contain" data-alt="Minimalist business logo for a global software enterprise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCm0uZDmhWlb_W_B5SDZh2S6MPpv-_54sEngRpgbN_Sm4QO4smwoknEkpqzswi80x-dq3xn8jlUh7mz_FWV0stvlJ7Uk0MYdL1z6hPYkCzLtmilw6PZPHTP6UQGAHdAHAqxGNf6zvqAA7A_ssO-15jDoMwiojGTGJ6rQukw2k1cUBW_6ifaIMLyI7worILBblX5qxLykHaN_xB-8IkmmBpcDyOj1Lx_Gt236mIg9JdOswpnRz5Iu38fpotnNLMZRmlLdyJOusSliiB"/>
+</div>
+<div class="flex justify-center">
+<img alt="Partner Logo" class="h-6 object-contain" data-alt="Professional logistics and cloud infrastructure partner logo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBztq1ANLq72n9VDHuFC0fTA6RHGbiF5tcU3fUTaLmJF_oYQ-pL96geMcYA4kSk4cB5gwmXBZA2MDUAO-nKIHFD4AfE8TRmocwDOClyyR6hJCfQt9VBwkRA_E9xPWeX0YqtbwS2219C3sKUuqP_wunc2OhPn0_oxTxJTjHXIjiYtqeumFL0z5m3xqFD_5twr0mgYsTjz7nlL1Cj4GPwwZzpr-v1tXR90eNVkCjl_bJHZ9VysasRuj5CMourcM6NE52xsmy25sHYKF6K"/>
+</div>
+<div class="flex justify-center">
+<img alt="Partner Logo" class="h-6 object-contain" data-alt="High-end consumer electronics and design leader corporate mark." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClTaukeTKeFNzUQy5rbYhO-XFsPHhsZGHxbgGTTCcyEfX3TDZN3fGqIb2-ARHJicYmoh9so6DjrOKSEsbNJaeDlDWfeLGR-UV-pMTNbia4LGkP4JU_6eZ1-TICgNdtpGzSSVxiMdjJwvxE-9jaE8bF7I8aqeIN6my7pYmrLe_CQQ9R2qq72JgfJPX0Ay3UZqjRgi41D1JWUzqLark3W9MnlPCgAuzKhH4S4SH0KgkAu0P3m1pbS75vA-2coev0OBGDvTaMPET6TVyU"/>
+</div>
+</div>
+</section>
+<!-- Consultation CTA -->
+<section class="py-24 px-8 bg-surface-container-low text-center">
+<h3 class="text-3xl font-headline font-bold mb-6">Ready to redefine <br/>your digital core?</h3>
+<p class="text-on-surface-variant mb-10 max-w-xs mx-auto">Join the vanguard of engineering excellence. Schedule your initial synthesis session today.</p>
+<button class="bg-primary text-on-primary px-8 py-5 rounded-md font-bold text-sm tracking-widest uppercase shadow-xl transition-transform active:scale-95">
+                Begin Consultation
+            </button>
+</section>
+</main>
+<!-- NavigationDrawer (Suppressed for focused landing page as per shell rules, but represented by bottom bar on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel z-50 px-6 py-4 flex justify-around items-center border-t border-outline-variant/10">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[0.6rem] font-bold uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span class="text-[0.6rem] font-bold uppercase tracking-tighter">Services</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="text-[0.6rem] font-bold uppercase tracking-tighter">Method</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-neutral-500">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-[0.6rem] font-bold uppercase tracking-tighter">Cases</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-16 px-8 mt-auto pb-32">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="space-y-6">
+<h4 class="text-xl font-headline font-bold text-amber-400">AETHERNETICS</h4>
+<p class="text-sm font-['Inter'] text-neutral-500">© 2024 Aethernetics Engineering Atelier. Built on the Architectural Ether.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 md:col-span-3">
+<div class="space-y-4">
+<h5 class="text-xs font-bold uppercase tracking-widest text-primary">Intelligence</h5>
+<ul class="space-y-3 text-sm text-neutral-500 font-['Inter']">
+<li class="hover:text-amber-200 transition-all duration-300">Insights</li>
+<li class="hover:text-amber-200 transition-all duration-300">Governance</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-xs font-bold uppercase tracking-widest text-primary">Standards</h5>
+<ul class="space-y-3 text-sm text-neutral-500 font-['Inter']">
+<li class="hover:text-amber-200 transition-all duration-300">Engineering</li>
+<li class="hover:text-amber-200 transition-all duration-300">Contact</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

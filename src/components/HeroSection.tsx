@@ -5,42 +5,46 @@ const HeroSection = () => (
   <section
     className="
       relative min-h-screen flex items-center justify-center pt-20
-      bg-[#FDFCFB]
+      bg-surface-lowest
       overflow-hidden
     "
   >
     {/* Refined Luxury Gradient */}
     <div className="absolute inset-0 bg-gradient-to-b 
-        from-[#FDFCFB] via-white to-[#F5F2EE] opacity-95" />
+        from-surface-lowest via-surface to-surface-lowest opacity-95" />
 
     {/* Subtle Gold Glow */}
     <div className="pointer-events-none absolute top-[-10%] left-1/2 -translate-x-1/2 
         h-[60vh] w-[90%] 
-        bg-gradient-to-b from-[#D4AF37]/20 to-transparent 
-        blur-[140px] opacity-50" />
+        bg-gradient-to-b from-primary/10 to-transparent 
+        blur-[140px] opacity-30" />
 
     <GridBackground />
 
     <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
 
       {/* Top Label */}
-      <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase mb-8 font-semibold text-[#888]">
-        AI-Powered Enterprise Innovation
-      </p>
+      <div className="inline-block px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-10">
+        <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-primary">
+          Engineering Atelier
+        </p>
+      </div>
 
       {/* Main Headline */}
-      <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-8 text-[#1A1A1A] font-serif">
-        Transforming Businesses
+      <h1 className="text-5xl md:text-7xl lg:text-9xl leading-[1.05] tracking-tighter mb-8 text-on-surface font-display font-bold">
+        Transforming
         <br />
-        <span className="italic text-[#D4AF37] font-medium">
-          With Intelligence.
+        Businesses 
+        <br />
+        <span className="text-primary italic font-medium">
+          with Intelligence
         </span>
       </h1>
 
       {/* Subtext */}
-      <p className="text-[#555] text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light font-sans">
-        We architect high-performance AI systems and scalable digital infrastructure 
-        designed for organizations that demand operational excellence.
+      <p className="text-on-surface/60 text-lg md:text-xl max-w-3xl mx-auto mb-14 leading-relaxed font-normal font-sans">
+        Architecting the future of enterprise through high-fidelity artificial 
+        intelligence and bespoke digital engineering.
       </p>
 
       {/* CTA Buttons */}
@@ -48,13 +52,24 @@ const HeroSection = () => (
         <Link
           to="/contact"
           className="
-            bg-[#1A1A1A] text-white
-            px-12 py-4 text-xs tracking-[0.2em] uppercase font-bold
-            hover:bg-[#D4AF37] hover:text-white
-            transition-all duration-500 rounded-full
+            gradient-primary text-on-primary
+            w-full sm:w-[280px] py-5 text-xs tracking-[0.2em] uppercase font-bold
+            hover:opacity-90
+            transition-all duration-500 rounded-md shadow-xl
           "
         >
           Schedule Consultation
+        </Link>
+        <Link
+          to="/portfolio"
+          className="
+            glass text-on-surface border border-border/20
+            w-full sm:w-[280px] py-5 text-xs tracking-[0.2em] uppercase font-bold
+            hover:bg-surface-container-high
+            transition-all duration-500 rounded-md
+          "
+        >
+          View Portfolio
         </Link>
       </div>
     </div>
