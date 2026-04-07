@@ -8,21 +8,21 @@ const XIcon = ({ className }: { className?: string }) => (
 );
 
 const Footer = () => (
-  <footer className="py-24 px-6 bg-surface-lowest border-t border-border/10">
+  <footer className="py-12 px-6 bg-surface-lowest border-t border-border/10">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-20">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
         <div className="max-w-sm">
           <Link
             to="/"
-            className="text-2xl font-display font-bold tracking-tighter text-on-surface"
+            className="text-lg font-display font-bold tracking-tighter text-on-surface"
           >
             Aethernetics
           </Link>
-          <p className="text-on-surface/60 mt-6 text-sm leading-relaxed font-sans font-normal">
+          <p className="text-on-surface/60 mt-3 text-sm leading-relaxed font-sans font-normal">
             Architecting high-performance digital ecosystems through bespoke
             software engineering and artificial intelligence.
           </p>
-          <div className="flex gap-5 mt-8">
+          <div className="flex gap-4 mt-6">
             <a
               href="https://www.linkedin.com/company/aethernetics-ai/"
               className="text-on-surface/70 hover:text-primary transition-colors"
@@ -47,7 +47,7 @@ const Footer = () => (
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12">
           <div className="flex flex-col gap-4">
             <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-on-surface">
               Company

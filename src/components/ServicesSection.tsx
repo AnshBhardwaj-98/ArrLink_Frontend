@@ -35,32 +35,32 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="relative py-32 px-6 bg-surface overflow-hidden">
+  <section id="services" className="relative py-16 px-6 bg-surface overflow-hidden">
     {/* Refined background */}
     <div className="absolute inset-0 bg-gradient-to-b from-surface-lowest via-surface to-surface-lowest opacity-70" />
     <GridBackground />
     
     <div className="relative z-10 max-w-7xl mx-auto px-4">
-      <div className="mb-24">
-        <h2 className="text-4xl md:text-5xl text-on-surface font-display font-bold mb-4">
+      <div className="mb-12">
+        <h2 className="text-2xl md:text-3xl text-on-surface font-display font-bold mb-3">
           Core Intelligence
         </h2>
-        <div className="w-24 h-1.5 bg-primary" />
+        <div className="w-16 h-1 bg-primary" />
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-6">
         {services.map((s) => (
           <div 
             key={s.title} 
-            className="group relative p-10 bg-surface-container border border-border/5 hover:bg-surface-container-high transition-all duration-700 rounded-2xl overflow-hidden flex flex-col items-start"
+            className="group relative p-6 bg-surface-container border border-border/5 hover:bg-surface-container-high transition-all duration-700 rounded-xl overflow-hidden flex flex-col items-start"
           >
-            <div className="mb-8 p-3 bg-surface-container-highest/40 rounded-xl group-hover:bg-primary/10 transition-colors duration-500">
-              <s.icon className="w-7 h-7 text-primary" strokeWidth={1} />
+            <div className="mb-6 p-2 bg-surface-container-highest/40 rounded-lg group-hover:bg-primary/10 transition-colors duration-500">
+              <s.icon className="w-5 h-5 text-primary" strokeWidth={1} />
             </div>
-            <h3 className="text-2xl text-on-surface font-display font-bold mb-4 group-hover:text-primary transition-colors duration-500">
+            <h3 className="text-lg text-on-surface font-display font-bold mb-3 group-hover:text-primary transition-colors duration-500">
               {s.title}
             </h3>
-            <p className="text-on-surface/60 leading-relaxed text-base font-sans font-normal max-w-[80%]">
+            <p className="text-on-surface/60 leading-relaxed text-sm font-sans font-normal max-w-[90%]">
               {s.description}
             </p>
           </div>

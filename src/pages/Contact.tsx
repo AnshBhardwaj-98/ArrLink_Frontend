@@ -91,10 +91,10 @@ const Contact = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8 text-black">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-on-surface/70 ml-1">
+                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
                       Name
                     </label>
                     <input
@@ -109,7 +109,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-on-surface/70 ml-1">
+                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
                       Email Address
                     </label>
                     <input
@@ -125,7 +125,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-on-surface/70 ml-1">
+                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
                     Company
                   </label>
                   <input
@@ -139,7 +139,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-on-surface/70 ml-1">
+                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
                     Project Brief
                   </label>
                   <textarea

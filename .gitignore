@@ -1,25 +1,107 @@
-# Logs
-logs
+# ============================================================================
+# DEPENDENCIES & PACKAGE MANAGERS
+# ============================================================================
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# ============================================================================
+# BUILD & DISTRIBUTION
+# ============================================================================
+dist/
+dist-ssr/
+build/
+.vite/
+*.tsbuildinfo
+
+# ============================================================================
+# ENVIRONMENT VARIABLES & SECRETS
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.staging.local
+.env.production.local
+
+# ============================================================================
+# IDE & EDITOR FILES
+# ============================================================================
+.vscode/*
+!.vscode/extensions.json
+.vscode/.history/
+.idea/
+.idea_modules/
+.project
+.classpath
+*.iml
+*.iws
+*.ipr
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# ============================================================================
+# DEVELOPMENT & RUNTIME
+# ============================================================================
+*.local
+.cache/
+.eslintcache
+.stylelintcache
+
+# ============================================================================
+# TESTING & COVERAGE
+# ============================================================================
+coverage/
+.nyc_output/
+*.lcov
+
+# ============================================================================
+# LOGS
+# ============================================================================
+logs/
 *.log
 npm-debug.log*
+npm-error.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+pnpm-error.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ============================================================================
+# OS & SYSTEM FILES
+# ============================================================================
+.env.*.local.swp
+*.swp
+*.swo
+*.swn
+*~
+.~*
+.fuse_hidden*
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+# ============================================================================
+# IDE SPECIFIC (JetBrains, Visual Studio, etc.)
+# ============================================================================
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.vscode/launch.json
+.vscode/settings.json
+
+# ============================================================================
+# MISC
+# ============================================================================
 conf_file.conf
+.next/
+out/
+public/dist/

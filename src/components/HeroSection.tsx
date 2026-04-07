@@ -24,14 +24,14 @@ const HeroSection = () => (
     <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
 
       {/* Top Label */}
-      <div className="inline-block px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-10">
-        <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-primary">
+      <div className="inline-block px-3 py-1.5 rounded-lg border border-primary/20 bg-primary/5 mb-6">
+        <p className="text-[9px] md:text-xs tracking-[0.4em] uppercase font-bold text-primary">
           Engineering Atelier
         </p>
       </div>
 
       {/* Main Headline */}
-      <h1 className="text-5xl md:text-7xl lg:text-9xl leading-[1.05] tracking-tighter mb-8 text-on-surface font-display font-bold">
+      <h1 className="text-3xl md:text-5xl lg:text-7xl leading-[1.05] tracking-tighter mb-4 text-on-surface font-display font-bold">
         Transforming
         <br />
         Businesses 
@@ -42,7 +42,7 @@ const HeroSection = () => (
       </h1>
 
       {/* Subtext */}
-      <p className="text-on-surface/60 text-lg md:text-xl max-w-3xl mx-auto mb-14 leading-relaxed font-normal font-sans">
+      <p className="text-on-surface/60 text-sm md:text-base max-w-3xl mx-auto mb-8 leading-relaxed font-normal font-sans">
         Architecting the future of enterprise through high-fidelity artificial 
         intelligence and bespoke digital engineering.
       </p>
@@ -55,7 +55,7 @@ const HeroSection = () => (
             gradient-primary text-on-primary
             w-full sm:w-[280px] py-5 text-xs tracking-[0.2em] uppercase font-bold
             hover:opacity-90
-            transition-all duration-500 rounded-md shadow-xl
+            transition-all duration-500 rounded-sm shadow-xl
           "
         >
           Schedule Consultation
@@ -66,7 +66,7 @@ const HeroSection = () => (
             glass text-on-surface border border-border/20
             w-full sm:w-[280px] py-5 text-xs tracking-[0.2em] uppercase font-bold
             hover:bg-surface-container-high
-            transition-all duration-500 rounded-md
+            transition-all duration-500 rounded-sm
           "
         >
           View Portfolio
