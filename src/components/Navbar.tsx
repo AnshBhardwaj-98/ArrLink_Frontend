@@ -21,7 +21,7 @@ const Navbar = () => {
           to="/" 
           className="text-lg tracking-tighter text-on-surface font-display font-bold"
         >
-          Aethernetics
+          ArrLink
         </Link>
 
         {/* Desktop */}

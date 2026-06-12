@@ -3,7 +3,7 @@
 ## 1. Overview & Creative North Star
 The Creative North Star for this design system is **"The Architectural Ether."** 
 
-Aethernetics is not just a software company; it is an engineering atelier. To reflect this, the design system moves away from the "flat and boxed" appearance of standard SaaS platforms toward a high-end, editorial aesthetic. We achieve this through **Intentional Asymmetry** and **Tonal Depth**. By leveraging Material Design's structural logic and infusing it with Glassmorphism, we create a UI that feels like light passing through a high-tech lens—futuristic, precise, and authoritative.
+ArrLink is not just a software company; it is an engineering atelier. To reflect this, the design system moves away from the "flat and boxed" appearance of standard SaaS platforms toward a high-end, editorial aesthetic. We achieve this through **Intentional Asymmetry** and **Tonal Depth**. By leveraging Material Design's structural logic and infusing it with Glassmorphism, we create a UI that feels like light passing through a high-tech lens—futuristic, precise, and authoritative.
 
 The interface should feel curated. We utilize expansive breathing room (negative space) and a sharp contrast between the utilitarian precision of **Inter** and the intellectual elegance of **Space Grotesk** (serving as a modern, high-tech evolution of the brand’s serif roots).
 

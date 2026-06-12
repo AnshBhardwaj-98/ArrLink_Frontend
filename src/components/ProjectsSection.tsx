@@ -13,14 +13,14 @@ interface Project {
 const projects: Project[] = [
   // Add your project objects here in the future
   // Example format:
-  {
-    id: "project-1",
-    title: "Project Name",
-    category: "Category",
-    description: "Project description",
-    image: "/path/to/image.jpg",
-    link: "https://app.imagine.bo",
-  },
+  // {
+  //   id: "project-1",
+  //   title: "Project Name",
+  //   category: "Category",
+  //   description: "Project description",
+  //   image: "/path/to/image.jpg",
+  //   link: "https://app.imagine.bo",
+  // },
 ];
 
 const ProjectsSection = () => {

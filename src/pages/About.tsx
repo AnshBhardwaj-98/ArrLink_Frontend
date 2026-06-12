@@ -53,11 +53,11 @@ const About = () => {
               The Firm
             </p>
             <h1 className="text-4xl md:text-6xl text-on-surface font-display font-bold mb-6 tracking-tighter">
-              About <span className="text-primary">Aethernetics</span>
+              About <span className="text-primary">ArrLink</span>
             </h1>
             <div className="w-16 h-px bg-primary/20 mx-auto mb-10" />
             <p className="text-on-surface text-xl md:text-3xl font-display leading-relaxed max-w-3xl mx-auto font-medium">
-              "Aethernetics builds high-performance software systems for businesses that depend on operational precision."
+              "ArrLink builds high-performance software systems for businesses that depend on operational precision."
             </p>
           </div>
 
@@ -75,7 +75,7 @@ const About = () => {
                   Most software projects fail not because of bad interfaces — but because of weak foundations. Poor architecture. Fragile integrations. Systems that cannot scale under real-world usage.
                 </p>
                 <p>
-                  At Aethernetics, we build differently. Every solution begins with a deliberate data model and an API designed for longevity. We engineer around real operational constraints to ensure stability as your complexity compounds.
+                  At ArrLink, we build differently. Every solution begins with a deliberate data model and an API designed for longevity. We engineer around real operational constraints to ensure stability as your complexity compounds.
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ const About = () => {
             </div>
             <div className="max-w-2xl mx-auto">
               <p className="text-on-surface/60 text-lg font-normal leading-relaxed mb-10">
-                Aethernetics exists to build software that businesses can rely on — not just launch. We transform complexity into competitive advantage.
+                ArrLink exists to build software that businesses can rely on — not just launch. We transform complexity into competitive advantage.
               </p>
               <a 
                 href="/contact" 

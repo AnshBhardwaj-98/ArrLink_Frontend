@@ -2,7 +2,7 @@ import { Quote, Star } from "lucide-react";
 
 const feedback = [
   {
-    text: "Aethernetics transformed our entire data infrastructure. Their AI solutions reduced our processing time by 60% while improving accuracy. Truly exceptional work.",
+    text: "ArrLink transformed our entire data infrastructure. Their AI solutions reduced our processing time by 60% while improving accuracy. Truly exceptional work.",
     author: "Rajesh Kumar",
     company: "DataFlow Systems",
     role: "VP Engineering",

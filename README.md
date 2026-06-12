@@ -1,4 +1,4 @@
-# Aethernetics Website
+# ArrLink Website
 
 A modern React website built with Vite, TypeScript, and shadcn-ui.
 

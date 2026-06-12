@@ -170,10 +170,10 @@ const Contact = () => {
                 Email Us
               </p>
               <a
-                href="mailto:info@aethernetics.co.in"
+                href="mailto:info@arrlink.co.in"
                 className="text-sm font-normal text-on-surface/60 hover:text-primary transition-colors"
               >
-                info@aethernetics.co.in{" "}
+                info@arrlink.co.in{" "}
               </a>
             </div>
             <div>

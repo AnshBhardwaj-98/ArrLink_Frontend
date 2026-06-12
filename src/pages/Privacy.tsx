@@ -35,7 +35,7 @@ const Privacy = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-serif text-[#1A1A1A] font-semibold uppercase tracking-wide">2. Use of Information</h2>
               <p>
-                Aethernetics uses the collected data to provide and improve our services, communicate with you regarding project inquiries, and send administrative or promotional information. We do not sell your personal information to third parties.
+                ArrLink uses the collected data to provide and improve our services, communicate with you regarding project inquiries, and send administrative or promotional information. We do not sell your personal information to third parties.
               </p>
             </section>
 
@@ -56,7 +56,7 @@ const Privacy = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-serif text-[#1A1A1A] font-semibold uppercase tracking-wide">5. Contact Us</h2>
               <p>
-                If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@aethernetics.co.in" className="text-[#D4AF37] hover:underline transition-all">info@aethernetics.co.in</a>.
+                If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@arrlink.co.in" className="text-[#D4AF37] hover:underline transition-all">info@arrlink.co.in</a>.
               </p>
             </section>
           </div>

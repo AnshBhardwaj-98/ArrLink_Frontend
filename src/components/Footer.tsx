@@ -16,7 +16,7 @@ const Footer = () => (
             to="/"
             className="text-lg font-display font-bold tracking-tighter text-on-surface"
           >
-            Aethernetics
+            ArrLink
           </Link>
           <p className="text-on-surface/60 mt-3 text-sm leading-relaxed font-sans font-normal">
             Architecting high-performance digital ecosystems through bespoke
@@ -24,21 +24,21 @@ const Footer = () => (
           </p>
           <div className="flex gap-4 mt-6">
             <a
-              href="https://www.linkedin.com/company/aethernetics-ai/"
+              href="https://www.linkedin.com/company/arrlink-ai/"
               className="text-on-surface/70 hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" strokeWidth={1} />
             </a>
             <a
-              href="https://www.instagram.com/aethernetics?igsh=amxwajF5OWY1em8y"
+              href="https://www.instagram.com/arrlink?igsh=amxwajF5OWY1em8y"
               className="text-on-surface/70 hover:text-primary transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" strokeWidth={1} />
             </a>
             <a
-              href="https://x.com/Aethernetics_"
+              href="https://x.com/ArrLink_"
               className="text-on-surface/70 hover:text-primary transition-colors"
               aria-label="X"
             >
@@ -70,10 +70,10 @@ const Footer = () => (
               Support
             </span>
             <a
-              href="mailto:info@aethernetics.co.in"
+              href="mailto:info@arrlink.co.in"
               className="text-sm text-on-surface/60 hover:text-primary transition-colors font-sans"
             >
-              info@aethernetics.co.in
+              info@arrlink.co.in
             </a>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Footer = () => (
 
       <div className="pt-8 border-t border-border/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-[11px] tracking-[0.1em] text-on-surface/40 font-sans">
-          © {new Date().getFullYear()} Aethernetics. Designed for Excellence.
+          © {new Date().getFullYear()} ArrLink. Designed for Excellence.
         </p>
         <div className="flex gap-8">
           <Link
