@@ -1,4 +1,6 @@
 import { Quote, Star } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
+import AmbientFloor from "./AmbientFloor";
 
 const feedback = [
   {
@@ -100,6 +102,8 @@ const feedback = [
 ];
 
 const FeedbackMarquee = () => {
+  const headerRef = useReveal<HTMLDivElement>();
+
   const renderStars = (rating: number) => (
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
@@ -107,8 +111,8 @@ const FeedbackMarquee = () => {
           key={i}
           className={`w-3.5 h-3.5 ${
             i < rating
-              ? "fill-yellow-500 text-yellow-500"
-              : "text-gold/30"
+              ? "fill-foreground/70 text-foreground/70"
+              : "text-foreground/15"
           }`}
         />
       ))}
@@ -116,16 +120,23 @@ const FeedbackMarquee = () => {
   );
 
   return (
-    <section className="py-24 bg-surface-lowest overflow-hidden border-y border-border/5">
-      <div className="container px-4 mb-16">
-        <div className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-4">
-            Industry Recognition
+    <section className="relative py-28 bg-surface-container-low overflow-hidden border-y border-foreground/10">
+      <AmbientFloor />
+
+      <div ref={headerRef} className="reveal container px-4 mb-16 relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <div className="section-marker mb-6 justify-center">
+            <span className="h-px w-6 bg-foreground/40" />
+            <span>§ 05 · Industry Recognition</span>
+            <span className="h-px w-6 bg-foreground/40" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 tracking-tighter text-balance">
+            Trusted by teams building{" "}
+            <span className="font-serif font-normal text-[1.08em]">at scale.</span>
           </h2>
-          <p className="text-on-surface/60 max-w-2xl text-center mb-4">
-            Trusted by leading enterprises across Asia, trusted by 50+ organizations
+          <p className="text-foreground/55 max-w-2xl text-sm md:text-base leading-relaxed">
+            Fifty-plus organizations across Asia rely on our engineering. A glimpse of the work in their words.
           </p>
-          <div className="w-12 h-1 bg-primary mb-8" />
         </div>
       </div>
 
@@ -136,18 +147,18 @@ const FeedbackMarquee = () => {
             {[...feedback, ...feedback].map((item, i) => (
               <div
                 key={i}
-                className="relative w-[360px] p-3.5 rounded-xl bg-surface-container border border-border/10 hover:border-primary/30 flex flex-col items-start gap-3 hover:bg-surface-container-high transition-all duration-500 group/card shadow-sm hover:shadow-md"
+                className="relative w-[360px] p-4 rounded-xl bg-background border border-foreground/10 hover:border-foreground/25 flex flex-col items-start gap-3 transition-all duration-500"
               >
                 {/* Header with stars and quote */}
                 <div className="flex justify-between items-start w-full gap-1.5">
-                  <div className="p-1 bg-surface-container-highest/40 rounded-lg flex-shrink-0">
-                    <Quote className="w-3.5 h-3.5 text-primary" />
+                  <div className="p-1 bg-foreground/5 rounded-lg flex-shrink-0">
+                    <Quote className="w-3.5 h-3.5 text-foreground/50" strokeWidth={1.5} />
                   </div>
                   {renderStars(item.rating)}
                 </div>
                 
                 {/* Review text */}
-                <p className="text-on-surface/75 text-xs leading-snug whitespace-normal font-normal line-clamp-3">
+                <p className="text-foreground/75 text-xs leading-snug whitespace-normal font-normal line-clamp-3">
                   "{item.text}"
                 </p>
 
@@ -156,13 +167,13 @@ const FeedbackMarquee = () => {
 
                 {/* Author info */}
                 <div className="flex items-center gap-2.5 w-full">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 flex items-center justify-center border border-primary/20 flex-shrink-0">
-                    <span className="text-[9px] font-bold text-primary">{item.initials}</span>
+                  <div className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center border border-foreground/15 flex-shrink-0">
+                    <span className="text-[9px] font-bold text-foreground/70">{item.initials}</span>
                   </div>
                   <div className="flex flex-col gap-0.25 flex-1">
-                    <span className="text-[11px] font-bold text-on-surface leading-tight">{item.author}</span>
-                    <span className="text-[9px] text-on-surface/60 font-medium leading-tight">{item.role}</span>
-                    <span className="text-[8px] text-on-surface/50 uppercase tracking-tight leading-tight">{item.company}</span>
+                    <span className="text-[11px] font-bold text-foreground leading-tight">{item.author}</span>
+                    <span className="text-[9px] text-foreground/60 font-medium leading-tight">{item.role}</span>
+                    <span className="text-[8px] text-foreground/50 uppercase tracking-tight leading-tight">{item.company}</span>
                   </div>
                 </div>
               </div>
@@ -176,18 +187,18 @@ const FeedbackMarquee = () => {
             {[...feedback, ...feedback].map((item, i) => (
               <div
                 key={i}
-                className="relative w-[360px] p-3.5 rounded-2xl bg-surface-container border border-border/10 hover:border-primary/30 flex flex-col items-start gap-3 hover:bg-surface-container-high transition-all duration-500 group/card shadow-sm hover:shadow-md"
+                className="relative w-[360px] p-4 rounded-xl bg-background border border-foreground/10 hover:border-foreground/25 flex flex-col items-start gap-3 transition-all duration-500"
               >
                 {/* Header with stars and quote */}
                 <div className="flex justify-between items-start w-full gap-1.5">
-                  <div className="p-1 bg-surface-container-highest/40 rounded-lg flex-shrink-0">
-                    <Quote className="w-3.5 h-3.5 text-primary" />
+                  <div className="p-1 bg-foreground/5 rounded-lg flex-shrink-0">
+                    <Quote className="w-3.5 h-3.5 text-foreground/50" strokeWidth={1.5} />
                   </div>
                   {renderStars(item.rating)}
                 </div>
                 
                 {/* Review text */}
-                <p className="text-on-surface/75 text-xs leading-snug whitespace-normal font-normal line-clamp-3">
+                <p className="text-foreground/75 text-xs leading-snug whitespace-normal font-normal line-clamp-3">
                   "{item.text}"
                 </p>
 
@@ -196,13 +207,13 @@ const FeedbackMarquee = () => {
 
                 {/* Author info */}
                 <div className="flex items-center gap-2.5 w-full">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary/40 to-primary/20 flex items-center justify-center border border-primary/20 flex-shrink-0">
-                    <span className="text-[9px] font-bold text-primary">{item.initials}</span>
+                  <div className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center border border-foreground/15 flex-shrink-0">
+                    <span className="text-[9px] font-bold text-foreground/70">{item.initials}</span>
                   </div>
                   <div className="flex flex-col gap-0.25 flex-1">
-                    <span className="text-[11px] font-bold text-on-surface leading-tight">{item.author}</span>
-                    <span className="text-[9px] text-on-surface/60 font-medium leading-tight">{item.role}</span>
-                    <span className="text-[8px] text-on-surface/50 uppercase tracking-tight leading-tight">{item.company}</span>
+                    <span className="text-[11px] font-bold text-foreground leading-tight">{item.author}</span>
+                    <span className="text-[9px] text-foreground/60 font-medium leading-tight">{item.role}</span>
+                    <span className="text-[8px] text-foreground/50 uppercase tracking-tight leading-tight">{item.company}</span>
                   </div>
                 </div>
               </div>

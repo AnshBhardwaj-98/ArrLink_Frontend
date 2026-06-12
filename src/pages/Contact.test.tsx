@@ -26,9 +26,9 @@ describe("Contact Page", () => {
 
   it("renders contact form with all fields", () => {
     renderWithRouter(<Contact />);
-    expect(screen.getByPlaceholderText("James Sterling")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("j.sterling@sterling-global.com")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Sterling Global Industries")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Arjun Sharma")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("arjun.sharma@tata.com")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Tata Consultancy Services")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Briefly describe your technical objectives/)).toBeInTheDocument();
   });
 
@@ -39,7 +39,7 @@ describe("Contact Page", () => {
 
   it("updates form state on input change", () => {
     renderWithRouter(<Contact />);
-    const nameInput = screen.getByPlaceholderText("James Sterling");
+    const nameInput = screen.getByPlaceholderText("Arjun Sharma");
     fireEvent.change(nameInput, { target: { value: "Test User" } });
     expect(nameInput).toHaveValue("Test User");
   });
@@ -47,14 +47,14 @@ describe("Contact Page", () => {
   it("submits form successfully", async () => {
     mockSend.mockResolvedValueOnce({ status: 200 });
     renderWithRouter(<Contact />);
-    
-    fireEvent.change(screen.getByPlaceholderText("James Sterling"), { target: { value: "Test User" } });
-    fireEvent.change(screen.getByPlaceholderText("j.sterling@sterling-global.com"), { target: { value: "test@example.com" } });
+
+    fireEvent.change(screen.getByPlaceholderText("Arjun Sharma"), { target: { value: "Test User" } });
+    fireEvent.change(screen.getByPlaceholderText("arjun.sharma@tata.com"), { target: { value: "test@example.com" } });
     fireEvent.change(screen.getByPlaceholderText(/Briefly describe your technical objectives/), { target: { value: "Test message content here" } });
-    
+
     const submitButton = screen.getByRole("button", { name: /submit inquiry/i });
     fireEvent.click(submitButton);
-    
+
     await waitFor(() => {
       expect(screen.getByText("Inquiry Received")).toBeInTheDocument();
     });
@@ -63,22 +63,22 @@ describe("Contact Page", () => {
   it("shows error on submission failure", async () => {
     const consoleSpy = vi.spyOn(console, "error").mockImplementation(() => {});
     mockSend.mockRejectedValueOnce(new Error("Network error"));
-    
+
     const alertSpy = vi.spyOn(window, "alert").mockImplementation(() => {});
-    
+
     renderWithRouter(<Contact />);
-    
-    fireEvent.change(screen.getByPlaceholderText("James Sterling"), { target: { value: "Test User" } });
-    fireEvent.change(screen.getByPlaceholderText("j.sterling@sterling-global.com"), { target: { value: "test@example.com" } });
+
+    fireEvent.change(screen.getByPlaceholderText("Arjun Sharma"), { target: { value: "Test User" } });
+    fireEvent.change(screen.getByPlaceholderText("arjun.sharma@tata.com"), { target: { value: "test@example.com" } });
     fireEvent.change(screen.getByPlaceholderText(/Briefly describe your technical objectives/), { target: { value: "Test message content here" } });
-    
+
     const submitButton = screen.getByRole("button", { name: /submit inquiry/i });
     fireEvent.click(submitButton);
-    
+
     await waitFor(() => {
       expect(alertSpy).toHaveBeenCalledWith("Failed to send message. Please try again.");
     });
-    
+
     consoleSpy.mockRestore();
     alertSpy.mockRestore();
   });

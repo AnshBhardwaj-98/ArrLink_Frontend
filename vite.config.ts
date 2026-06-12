@@ -6,6 +6,9 @@ export default defineConfig({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [
+      "viral-salami-thimble.ngrok-free.dev",
+    ],
     hmr: {
       overlay: false,
     },

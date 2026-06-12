@@ -17,6 +17,7 @@ export default {
       fontFamily: {
         sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
         display: ["Sora", "sans-serif"],
+        serif: ["Instrument Serif", "EB Garamond", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,10 +29,18 @@ export default {
           DEFAULT: "hsl(var(--surface))",
           lowest: "hsl(var(--surface-container-lowest))",
           low: "hsl(var(--surface-container-low))",
-          container: "hsl(var(--surface-container))",
+          container: {
+            DEFAULT: "hsl(var(--surface-container))",
+            lowest: "hsl(var(--surface-container-lowest))",
+            low: "hsl(var(--surface-container-low))",
+            high: "hsl(var(--surface-container-high))",
+            highest: "hsl(var(--surface-container-highest))",
+          },
           high: "hsl(var(--surface-container-high))",
           highest: "hsl(var(--surface-container-highest))",
         },
+        "on-surface": "hsl(var(--foreground))",
+        "on-primary": "hsl(var(--primary-foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

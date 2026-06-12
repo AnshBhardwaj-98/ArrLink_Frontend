@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,66 +6,119 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5.5%; /* #0e0e0e - surface-container-lowest */
-    --foreground: 15 4.1% 89.2%; /* #e5e2e1 - on-surface */
+    /* Editorial Light — warm cream canvas, deep ink type */
+    --background: 36 36% 97%;            /* #FAF7F2 cream */
+    --foreground: 247 27% 12%;           /* #1A1729 deep ink */
 
-    --card: 60 1.6% 12.4%; /* #20201f - surface-container */
-    --card-foreground: 15 4.1% 89.2%;
+    --card: 36 30% 95%;
+    --card-foreground: 247 27% 12%;
 
-    --popover: 0 0% 7.5%; /* #131313 - surface */
-    --popover-foreground: 15 4.1% 89.2%;
+    --popover: 36 36% 97%;
+    --popover-foreground: 247 27% 12%;
 
-    --primary: 45.2 87.1% 63.1%; /* #f2ca50 */
-    --primary-foreground: 0 0% 7.5%;
-    --primary-container: 45.8 63.8% 52.4%; /* #d4af37 */
+    --primary: 238 54% 50%;              /* #3B3FC5 indigo */
+    --primary-foreground: 0 0% 100%;
+    --primary-container: 307 61% 63%;    /* #D966CC magenta */
 
-    --surface: 0 0% 7.5%; /* #131313 */
-    --surface-container-lowest: 0 0% 5.5%; /* #0e0e0e */
-    --surface-container-low: 0 0% 9.4%; /* Derived #181818 */
-    --surface-container: 60 1.6% 12.4%; /* #20201f */
-    --surface-container-high: 0 0% 16.5%; /* Derived #2a2a2a */
-    --surface-container-highest: 0 0% 20.8%; /* #353535 */
+    /* Surface tiers — subtly darker cream shades for elevation */
+    --surface: 36 32% 95%;
+    --surface-container-lowest: 36 36% 97%;
+    --surface-container-low: 36 33% 96%;
+    --surface-container: 38 28% 93%;
+    --surface-container-high: 38 25% 90%;
+    --surface-container-highest: 40 22% 87%;
 
-    --secondary: 0 0% 20.8%; /* surface-container-highest */
-    --secondary-foreground: 15 4.1% 89.2%;
+    --secondary: 307 61% 63%;            /* #D966CC magenta */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 20.8%;
-    --muted-foreground: 15 4.1% 60%;
+    --muted: 36 20% 90%;
+    --muted-foreground: 247 12% 38%;
 
-    --accent: 45.2 87.1% 63.1%;
-    --accent-foreground: 0 0% 7.5%;
+    --accent: 264 61% 52%;               /* #9B6FDE accent — slightly darker for cream contrast */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 43.5 18.2% 25.7% / 0.15; /* #4d4635 with 15% opacity as Ghost Border */
-    --input: 43.5 18.2% 25.7% / 0.4;
-    --ring: 45.2 87.1% 63.1%;
+    --border: 247 27% 12% / 0.08;
+    --input: 247 27% 12% / 0.18;
+    --ring: 238 54% 50%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 5.5%;
-    --sidebar-foreground: 15 4.1% 89.2%;
-    --sidebar-primary: 45.2 87.1% 63.1%;
-    --sidebar-primary-foreground: 0 0% 7.5%;
-    --sidebar-accent: 60 1.6% 12.4%;
-    --sidebar-accent-foreground: 15 4.1% 89.2%;
-    --sidebar-border: 43.5 18.2% 25.7%;
-    --sidebar-ring: 45.2 87.1% 63.1%;
+    /* Dark inverse — used by Footer + CTASection for punctuation */
+    --inverse-bg: 247 27% 9%;
+    --inverse-fg: 36 36% 97%;
+
+    --sidebar-background: 36 36% 97%;
+    --sidebar-foreground: 247 27% 12%;
+    --sidebar-primary: 238 54% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 38 25% 90%;
+    --sidebar-accent-foreground: 247 27% 12%;
+    --sidebar-border: 247 27% 12% / 0.08;
+    --sidebar-ring: 238 54% 50%;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-surface/60 backdrop-blur-[20px];
+    @apply bg-background/70 backdrop-blur-[20px];
   }
 
   .ambient-shadow {
-    box-shadow: 0 40px 0 0 rgba(229, 226, 225, 0.06);
+    box-shadow: 0 30px 60px -20px hsl(var(--foreground) / 0.08);
   }
 
   .gradient-primary {
-    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary-container)));
+    background: linear-gradient(110deg, hsl(var(--primary)) 0%, hsl(var(--primary-container)) 100%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(110deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 45%, hsl(var(--primary-container)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* Editorial serif — used for italic accents on key words */
+  .font-serif {
+    font-family: "Instrument Serif", "EB Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  /* Section marker — "§ 01" book-chapter style */
+  .section-marker {
+    @apply inline-flex items-center gap-2.5 text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-foreground/45;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -76,7 +129,7 @@
 
   body {
     @apply bg-background text-foreground antialiased font-sans;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -86,4 +139,179 @@
   html {
     scroll-behavior: smooth;
   }
+
+  ::selection {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.06); }
+}
+
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(1.08); }
+}
+
+@keyframes scroll-cue {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes ring-spin-a {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ring-spin-b {
+  from { transform: rotate(60deg); }
+  to { transform: rotate(-300deg); }
+}
+
+@keyframes ring-spin-c {
+  from { transform: rotate(-60deg); }
+  to { transform: rotate(300deg); }
+}
+
+@keyframes core-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 1; }
+}
+
+@keyframes badge-float-a {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes badge-float-b {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.orb-a { animation: orb-drift-a 18s ease-in-out infinite; }
+.orb-b { animation: orb-drift-b 22s ease-in-out infinite; }
+.animate-scroll-cue { animation: scroll-cue 2.4s ease-in-out infinite; }
+.animate-float-y { animation: float-y 6s ease-in-out infinite; }
+.animate-ring-a { animation: ring-spin-a 28s linear infinite; transform-origin: center; }
+.animate-ring-b { animation: ring-spin-b 36s linear infinite; transform-origin: center; }
+.animate-ring-c { animation: ring-spin-c 44s linear infinite; transform-origin: center; }
+.animate-core-pulse { animation: core-pulse 3.4s ease-in-out infinite; }
+.animate-badge-a { animation: badge-float-a 5s ease-in-out infinite; }
+.animate-badge-b { animation: badge-float-b 6s ease-in-out infinite; }
+
+/* Subtle ambient grid — dark hairlines on cream */
+.ambient-floor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-floor::before,
+.ambient-floor::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image:
+    linear-gradient(to right, hsl(var(--foreground) / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.ambient-floor::before {
+  top: 0;
+  bottom: -40%;
+  transform: perspective(1000px) rotateX(-62deg);
+  transform-origin: 50% 0%;
+  -webkit-mask-image: radial-gradient(ellipse 110% 60% at 50% 0%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+          mask-image: radial-gradient(ellipse 110% 60% at 50% 0%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+}
+
+.ambient-floor::after {
+  top: -40%;
+  bottom: 0;
+  transform: perspective(1000px) rotateX(62deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: radial-gradient(ellipse 110% 60% at 50% 100%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+          mask-image: radial-gradient(ellipse 110% 60% at 50% 100%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
+}
+
+/* Inverse — for dark sections (CTA, Footer) sitting inside the cream flow.
+   Use as `<section className="inverse">`. Children inherit dark-mode contrast. */
+.inverse {
+  background: hsl(var(--inverse-bg));
+  color: hsl(var(--inverse-fg));
+  --foreground: var(--inverse-fg);
+  --background: var(--inverse-bg);
+  --border: 36 36% 97% / 0.1;
+}
+
+.inverse .ambient-floor::before,
+.inverse .ambient-floor::after {
+  background-image:
+    linear-gradient(to right, hsl(36 36% 97% / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(36 36% 97% / 0.06) 1px, transparent 1px);
+}
+
+/* Hero perspective floor — kept for legacy use, but the orbital core now
+   dominates the hero centerpiece rather than the floor. */
+.perspective-floor {
+  perspective: 900px;
+  perspective-origin: 50% 0%;
+}
+
+.floor-grid {
+  position: absolute;
+  inset: -50% 0 0 0;
+  background-image:
+    linear-gradient(to right, hsl(var(--foreground) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.1) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: rotateX(60deg);
+  transform-origin: 50% 100%;
+  animation: floor-scroll 14s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
+}
+
+@keyframes floor-scroll {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floor-grid,
+  .animate-float-y,
+  .animate-ring-a,
+  .animate-ring-b,
+  .animate-ring-c,
+  .animate-core-pulse,
+  .animate-badge-a,
+  .animate-badge-b {
+    animation: none !important;
+  }
+  .animate-core-pulse { transform: translate(-50%, -50%); }
 }

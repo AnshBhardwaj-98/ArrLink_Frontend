@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="mb-6">
-          <h2 className="text-lg md:text-xl text-on-surface font-display font-bold mb-1">
+          <h2 className="text-lg md:text-xl text-foreground font-display font-bold mb-1">
             Featured Portfolio
           </h2>
           <div className="w-8 h-0.5 bg-primary" />
@@ -74,12 +74,12 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base text-on-surface font-display font-bold mb-1 group-hover:text-primary transition-colors duration-500">
+                <h3 className="text-base text-foreground font-display font-bold mb-1 group-hover:text-primary transition-colors duration-500">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-on-surface/70 leading-relaxed text-xs md:text-sm font-sans font-normal mb-3 line-clamp-2">
+                <p className="text-foreground/70 leading-relaxed text-xs md:text-sm font-sans font-normal mb-3 line-clamp-2">
                   {project.description}
                 </p>
 

@@ -12,23 +12,23 @@ The interface should feel curated. We utilize expansive breathing room (negative
 ## 2. Colors & Surface Philosophy
 
 ### The Pallete Logic
-The color system is built on a "Dark Mode First" foundation. We use `surface` (#131313) as our canvas, allowing the `primary` (#f2ca50) gold to act as a laser-focused accent that guides the eye to conversion points.
+The color system is built on a "Dark Mode First" foundation. We use `background` (#0D0B1A) as our canvas, allowing the `primary` (#3B3FC5) indigo and `secondary` (#D966CC) magenta to act as vibrant accents.
 
 ### The "No-Line" Rule
 **Explicit Instruction:** Designers are prohibited from using 1px solid borders to define sections. 
-*   **Boundaries** must be established through background shifts. For example, a `surface-container-low` hero section should transition into a `surface` section without a stroke.
+*   **Boundaries** must be established through background shifts. For example, a `surface-container-low` hero section should transition into a `background` section without a stroke.
 *   **Separation** is achieved through the Spacing Scale or subtle shifts in tonal value.
 
 ### Surface Hierarchy & Nesting
-Treat the UI as a physical stack of glass and stone. 
-*   **Foundation:** `surface-container-lowest` (#0e0e0e) for the background.
-*   **Content Areas:** `surface-container` (#20201f) for main content blocks.
-*   **Interactive Cards:** `surface-container-highest` (#353535) for elements that require the user's immediate attention.
+Treat the UI as a physical stack of glass and indigo stone. 
+*   **Foundation:** `surface-container-lowest` (#080612) for the background.
+*   **Content Areas:** `surface-container` (#151228) for main content blocks.
+*   **Interactive Cards:** `surface-container-highest` (#24203D) for elements that require the user's immediate attention.
 
 ### The "Glass & Gradient" Rule
-To elevate the "Aether" feel, use Glassmorphism for floating UI (navigation bars, tooltips, and dropdowns). 
-*   **Formula:** `surface-variant` at 60% opacity + `backdrop-filter: blur(20px)`.
-*   **Gradients:** Use a subtle linear gradient from `primary` (#f2ca50) to `primary-container` (#d4af37) for Hero CTAs. This creates a metallic, high-fidelity sheen that feels premium rather than "web-native."
+To elevate the "ArrLink" feel, use Glassmorphism for floating UI (navigation bars, tooltips, and dropdowns). 
+*   **Formula:** `surface` at 60% opacity + `backdrop-filter: blur(20px)`.
+*   **Gradients:** Use a linear gradient from `primary` (#3B3FC5) to `primary-container` (#D966CC) for Hero CTAs and active states. This creates a high-energy, modern aesthetic.
 
 ---
 

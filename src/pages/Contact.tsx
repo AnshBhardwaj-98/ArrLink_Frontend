@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import GridBackground from "@/components/GridBackground";
+import AmbientFloor from "@/components/AmbientFloor";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -47,45 +47,44 @@ const Contact = () => {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       <main className="relative pt-40 pb-32 px-6 overflow-hidden">
-        {/* Background elements to match the new theme */}
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-lowest via-surface to-surface-lowest opacity-95" />
-        <div className="pointer-events-none absolute top-[-10%] left-1/2 -translate-x-1/2 h-[50vh] w-[80%] bg-gradient-to-b from-primary/10 to-transparent blur-[120px] opacity-40" />
-        <GridBackground />
+        <AmbientFloor />
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 font-bold text-primary">
-              Collaboration
-            </p>
-            <h1 className="text-4xl md:text-6xl text-on-surface font-display font-bold mb-6 tracking-tighter">
-              Let's{" "}
-              <span className="text-primary">Talk</span>
+            <div className="section-marker mb-6 justify-center">
+              <span className="h-px w-6 bg-foreground/40" />
+              <span>§ 01 · Collaboration</span>
+              <span className="h-px w-6 bg-foreground/40" />
+            </div>
+            <h1 className="text-4xl md:text-6xl text-foreground font-display font-bold mb-6 tracking-tighter">
+              Let&apos;s{" "}
+              <span className="font-serif font-normal text-[1.08em]">Talk</span>
             </h1>
-            <div className="w-16 h-px bg-primary/20 mx-auto mb-8" />
-            <p className="text-on-surface/60 text-lg max-w-xl mx-auto leading-relaxed font-normal">
-              Tell us about your system requirements. We'll respond within 24
+            <div className="w-16 h-px bg-foreground/20 mx-auto mb-8" />
+            <p className="text-foreground/60 text-lg max-w-xl mx-auto leading-relaxed font-normal">
+              Tell us about your system requirements. We&apos;ll respond within 24
               hours with a preliminary assessment.
             </p>
           </div>
 
-          <div className="bg-surface-container/40 backdrop-blur-md border border-border/10 p-8 md:p-12 rounded-3xl ambient-shadow">
+          <div className="bg-surface-container/40 backdrop-blur-md border border-foreground/10 p-8 md:p-12 rounded-3xl">
             {submitted ? (
               <div className="py-20 text-center animate-in fade-in zoom-in-95 duration-500">
-                <div className="mb-6 inline-block p-4 bg-primary/10 rounded-full">
-                  <div className="w-8 h-8 text-primary border-2 border-primary rounded-full flex items-center justify-center font-bold">
+                <div className="mb-6 inline-block p-4 bg-foreground/5 rounded-full border border-foreground/15">
+                  <div className="w-8 h-8 text-foreground border-2 border-foreground/40 rounded-full flex items-center justify-center font-bold">
                     ✓
                   </div>
                 </div>
-                <h2 className="text-2xl font-display font-bold text-on-surface mb-4">
+                <h2 className="text-2xl font-display font-bold text-foreground mb-4">
                   Inquiry Received
                 </h2>
-                <p className="text-on-surface/60 font-normal max-w-sm mx-auto">
+                <p className="text-foreground/60 font-normal max-w-sm mx-auto">
                   Thank you for reaching out. Our team will review your details
                   and contact you within one business day.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-10 text-[10px] tracking-[0.2em] uppercase font-bold text-on-surface border-b border-on-surface pb-1 hover:text-primary hover:border-primary transition-all"
+                  className="mt-10 text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/60 border-b border-foreground/30 pb-1 hover:text-foreground hover:border-foreground transition-all"
                 >
                   Send another message
                 </button>
@@ -94,7 +93,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-8 text-black">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
+                    <label className="text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/70 ml-1">
                       Name
                     </label>
                     <input
@@ -105,11 +104,11 @@ const Contact = () => {
                       onChange={(e) =>
                         setForm({ ...form, name: e.target.value })
                       }
-                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-on-surface focus:outline-none focus:border-primary/40 focus:bg-surface-container-highest/40 transition-all rounded-xl"
+                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
+                    <label className="text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/70 ml-1">
                       Email Address
                     </label>
                     <input
@@ -120,7 +119,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
-                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-on-surface focus:outline-none focus:border-primary/40 focus:bg-surface-container-highest/40 transition-all rounded-xl"
+                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                     />
                   </div>
                 </div>
@@ -135,7 +134,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setForm({ ...form, company: e.target.value })
                     }
-                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-on-surface focus:outline-none focus:border-primary/40 focus:bg-surface-container-highest/40 transition-all rounded-xl"
+                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -150,13 +149,13 @@ const Contact = () => {
                     onChange={(e) =>
                       setForm({ ...form, message: e.target.value })
                     }
-                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-on-surface focus:outline-none focus:border-primary/40 focus:bg-surface-container-highest/40 transition-all rounded-xl resize-none"
+                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl resize-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full md:w-auto gradient-primary text-on-primary px-12 py-5 text-[10px] tracking-[0.2em] uppercase font-bold hover:opacity-90 transition-all duration-500 rounded-md shadow-xl disabled:opacity-50"
+                  className="w-full md:w-auto bg-foreground text-background px-12 py-5 text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-foreground/90 transition-all duration-300 rounded-md disabled:opacity-50"
                 >
                   {loading ? "Sending..." : "Submit Inquiry"}
                 </button>
@@ -166,21 +165,21 @@ const Contact = () => {
 
           <div className="mt-24 pt-16 border-t border-border/10 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-on-surface/40 mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-foreground/40 mb-4">
                 Email Us
               </p>
               <a
                 href="mailto:info@arrlink.co.in"
-                className="text-sm font-normal text-on-surface/60 hover:text-primary transition-colors"
+                className="text-sm font-normal text-foreground/60 hover:text-foreground transition-colors"
               >
                 info@arrlink.co.in{" "}
               </a>
             </div>
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-on-surface/40 mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-foreground/40 mb-4">
                 Availability
               </p>
-              <p className="text-sm font-normal text-on-surface/60">
+              <p className="text-sm font-normal text-foreground/60">
                 Mon — Fri, 9am — 6pm EST
               </p>
             </div>
