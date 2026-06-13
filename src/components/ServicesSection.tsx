@@ -58,7 +58,7 @@ const ServiceCard = ({ s, index }: { s: typeof services[number]; index: number }
           <s.icon className="w-5 h-5 text-foreground/65 group-hover:text-foreground transition-colors duration-500" strokeWidth={1.25} />
         </div>
         <span className="text-[9px] tracking-[0.3em] uppercase font-medium text-foreground/40">
-          §{String(index + 1).padStart(2, "0")} · {s.tag}
+          {s.tag}
         </span>
       </div>
 
@@ -89,7 +89,7 @@ const ServicesSection = () => {
         <div ref={headerRef} className="reveal mb-16 max-w-3xl">
           <div className="section-marker mb-6">
             <span className="h-px w-6 bg-foreground/40" />
-            <span>§ 02 · Core Intelligence</span>
+            <span>Core Intelligence</span>
           </div>
           <h2 className="text-4xl md:text-6xl text-foreground font-display font-bold mb-5 tracking-tighter">
             Engineering across the{" "}

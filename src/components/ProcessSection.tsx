@@ -94,7 +94,7 @@ const ProcessSection = () => {
         <div ref={headerRef} className="reveal mb-20 text-center">
           <div className="section-marker mb-6 justify-center">
             <span className="h-px w-6 bg-foreground/40" />
-            <span>§ 03 · The Atelier Way</span>
+            <span>The Atelier Way</span>
             <span className="h-px w-6 bg-foreground/40" />
           </div>
           <h2 className="text-4xl md:text-6xl text-foreground font-display font-bold tracking-tighter">

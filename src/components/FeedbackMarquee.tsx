@@ -127,7 +127,7 @@ const FeedbackMarquee = () => {
         <div className="flex flex-col items-center text-center">
           <div className="section-marker mb-6 justify-center">
             <span className="h-px w-6 bg-foreground/40" />
-            <span>§ 05 · Industry Recognition</span>
+            <span>Industry Recognition</span>
             <span className="h-px w-6 bg-foreground/40" />
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-5 tracking-tighter text-balance">

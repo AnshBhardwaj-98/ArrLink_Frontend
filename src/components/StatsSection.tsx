@@ -69,7 +69,7 @@ const StatsSection = () => {
         <div ref={headerRef} className="reveal mb-16 max-w-3xl">
           <div className="section-marker mb-6">
             <span className="h-px w-6 bg-foreground/40" />
-            <span>§ 04 · Outcomes in Numbers</span>
+            <span>Outcomes in Numbers</span>
           </div>
           <h2 className="text-3xl md:text-5xl text-foreground font-display font-bold tracking-tighter text-balance">
             Measured by the systems we put{" "}
@@ -100,9 +100,6 @@ const StatCard = ({ s, index }: { s: typeof stats[number]; index: number }) => {
         aria-hidden
         className="absolute inset-x-0 top-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-foreground/40"
       />
-      <p className="text-[9px] tracking-[0.35em] uppercase font-medium text-foreground/40 mb-4">
-        §{String(index + 1).padStart(2, "0")}
-      </p>
       <div className="flex items-baseline gap-1 mb-4">
         <span className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-none">
           <CountUp end={s.value} suffix={s.suffix} />

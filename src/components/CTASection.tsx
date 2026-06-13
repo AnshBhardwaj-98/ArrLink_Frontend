@@ -37,7 +37,7 @@ const CTASection = () => {
         <div className="inline-flex items-center gap-2.5 mb-7">
           <span className="h-px w-6 bg-white/40" />
           <p className="text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-white/60">
-            § 06 · Synthesis Session
+            Synthesis Session
           </p>
           <span className="h-px w-6 bg-white/40" />
         </div>

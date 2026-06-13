@@ -55,7 +55,7 @@ const HeroSection = () => {
           >
             <span className="h-px w-6 bg-foreground/40" />
             <p className="text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-foreground/55">
-              Engineering Atelier · Est. 2024
+              Engineering Atelier 
             </p>
           </div>
 
@@ -163,28 +163,24 @@ const OrbitalCore = () => {
       {/* Annotation labels — fixed positions, pointing into the diagram with hairline rules */}
       <Annotation
         className="top-[2%] left-1/2 -translate-x-1/2 text-center"
-        label="01"
         value="Throughput"
         meta="1.24M req/s"
         line="bottom"
       />
       <Annotation
         className="top-1/2 -translate-y-1/2 right-0 text-right"
-        label="02"
         value="P99 latency"
         meta="24ms"
         line="left"
       />
       <Annotation
         className="bottom-[2%] left-1/2 -translate-x-1/2 text-center"
-        label="03"
         value="Accuracy"
         meta="94.2%"
         line="top"
       />
       <Annotation
         className="top-1/2 -translate-y-1/2 left-0 text-left"
-        label="04"
         value="Uptime"
         meta="99.99%"
         line="right"
@@ -301,13 +297,11 @@ const OrbitalCore = () => {
 
 const Annotation = ({
   className,
-  label,
   value,
   meta,
   line,
 }: {
   className?: string;
-  label: string;
   value: string;
   meta: string;
   line: "top" | "bottom" | "left" | "right";
@@ -323,9 +317,6 @@ const Annotation = ({
     <div className={`absolute z-10 ${className ?? ""}`}>
       <div className="relative inline-block">
         <span className={lineMap[line]} />
-        <p className="text-[9px] tracking-[0.35em] uppercase font-medium text-foreground/35 mb-0.5">
-          §{label}
-        </p>
         <p className="text-[10px] tracking-[0.15em] uppercase font-bold text-foreground/55">
           {value}
         </p>

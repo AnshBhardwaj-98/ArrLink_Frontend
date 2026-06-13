@@ -13,7 +13,7 @@ const Privacy = () => {
           <div className="mb-16">
             <div className="section-marker mb-5">
               <span className="h-px w-6 bg-foreground/40" />
-              <span>§ · Legal</span>
+              <span>Legal</span>
             </div>
             <h1 className="text-4xl md:text-5xl text-foreground font-display mb-6">
               Privacy{" "}

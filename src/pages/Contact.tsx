@@ -53,7 +53,7 @@ const Contact = () => {
           <div className="text-center mb-20">
             <div className="section-marker mb-6 justify-center">
               <span className="h-px w-6 bg-foreground/40" />
-              <span>§ 01 · Collaboration</span>
+              <span>Collaboration</span>
               <span className="h-px w-6 bg-foreground/40" />
             </div>
             <h1 className="text-4xl md:text-6xl text-foreground font-display font-bold mb-6 tracking-tighter">

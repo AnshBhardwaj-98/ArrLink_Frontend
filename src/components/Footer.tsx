@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="inline-flex items-center gap-2.5 mb-5">
             <span className="h-px w-6 bg-white/40" />
             <p className="text-[10px] tracking-[0.35em] uppercase font-medium text-white/50">
-              § 07 · Engineering Atelier
+              Engineering Atelier
             </p>
           </div>
           <h3 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-white">
