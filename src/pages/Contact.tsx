@@ -62,8 +62,8 @@ const Contact = () => {
             </h1>
             <div className="w-16 h-px bg-foreground/20 mx-auto mb-8" />
             <p className="text-foreground/60 text-lg max-w-xl mx-auto leading-relaxed font-normal">
-              Tell us about your system requirements. We&apos;ll respond within 24
-              hours with a preliminary assessment.
+              Tell us about your system requirements. We&apos;ll respond within
+              24 hours with a preliminary assessment.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
+                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-foreground/70 ml-1">
                     Company
                   </label>
                   <input
@@ -138,7 +138,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-white ml-1">
+                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-foreground/70 ml-1">
                     Project Brief
                   </label>
                   <textarea
