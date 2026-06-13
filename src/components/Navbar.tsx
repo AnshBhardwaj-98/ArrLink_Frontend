@@ -19,7 +19,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (to: string) => (to === "/" ? pathname === "/" : pathname.startsWith(to));
+  const isActive = (to: string) =>
+    to === "/" ? pathname === "/" : pathname.startsWith(to);
 
   return (
     <nav
@@ -34,7 +35,7 @@ const Navbar = () => {
           aria-label="ArrLink home"
         >
           <img
-            src="https://public.assets.vnytros.dev/arrlink_logo.svg"
+            src="https://public.assets.vnytros.dev/arrlink.logo.png"
             alt=""
             className="h-7 w-auto select-none transition-transform duration-500 group-hover:rotate-[8deg]"
             draggable={false}
@@ -52,7 +53,13 @@ const Navbar = () => {
                 to={link.to}
                 className="relative group text-[11px] tracking-[0.25em] uppercase font-medium transition-colors duration-300"
               >
-                <span className={active ? "text-foreground" : "text-foreground/60 group-hover:text-foreground"}>
+                <span
+                  className={
+                    active
+                      ? "text-foreground"
+                      : "text-foreground/60 group-hover:text-foreground"
+                  }
+                >
                   {link.label}
                 </span>
                 <span
