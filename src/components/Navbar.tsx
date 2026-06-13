@@ -34,7 +34,7 @@ const Navbar = () => {
           aria-label="ArrLink home"
         >
           <img
-            src="/Arrlink_logo.png"
+            src="https://public.assets.vnytros.dev/arrlink_logo.svg"
             alt=""
             className="h-7 w-auto select-none transition-transform duration-500 group-hover:rotate-[8deg]"
             draggable={false}

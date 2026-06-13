@@ -68,7 +68,7 @@ const CTASection = () => {
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Link>
           <a
-            href="mailto:info@arrlink.co.in"
+            href="mailto:info@arrlink.com"
             className="group w-full sm:w-auto px-7 py-4 rounded-md
                        border border-white/30 text-white
                        text-xs tracking-[0.2em] uppercase font-bold
@@ -77,7 +77,7 @@ const CTASection = () => {
                        inline-flex items-center justify-center gap-2"
           >
             <Mail className="w-3.5 h-3.5 text-white/70" strokeWidth={1.5} />
-            <span>info@arrlink.co.in</span>
+            <span>info@arrlink.com</span>
           </a>
         </div>
       </div>

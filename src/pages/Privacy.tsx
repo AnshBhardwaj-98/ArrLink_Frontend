@@ -57,7 +57,7 @@ const Privacy = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-display text-foreground font-semibold uppercase tracking-wide">5. Contact Us</h2>
               <p>
-                If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@arrlink.co.in" className="text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground transition-all">info@arrlink.co.in</a>.
+                If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@arrlink.com" className="text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground transition-all">info@arrlink.com</a>.
               </p>
             </section>
           </div>

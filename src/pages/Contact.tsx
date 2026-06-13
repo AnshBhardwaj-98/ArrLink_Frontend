@@ -169,10 +169,10 @@ const Contact = () => {
                 Email Us
               </p>
               <a
-                href="mailto:info@arrlink.co.in"
+                href="mailto:info@arrlink.com"
                 className="text-sm font-normal text-foreground/60 hover:text-foreground transition-colors"
               >
-                info@arrlink.co.in{" "}
+                info@arrlink.com{" "}
               </a>
             </div>
             <div>

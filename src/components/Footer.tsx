@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
           </div>
           <h3 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-white">
-            Arr<span className="font-serif font-normal text-[1.08em]">L</span>ink.
+            ArrLink
           </h3>
         </div>
 
@@ -109,10 +109,10 @@ const Footer = () => {
                 Reach
               </span>
               <a
-                href="mailto:info@arrlink.co.in"
+                href="mailto:info@arrlink.com"
                 className="group inline-flex items-center gap-1 text-sm text-white/65 hover:text-white transition-colors font-sans w-fit"
               >
-                <span>info@arrlink.co.in</span>
+                <span>info@arrlink.com</span>
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <span className="text-xs text-white/40 font-normal">
