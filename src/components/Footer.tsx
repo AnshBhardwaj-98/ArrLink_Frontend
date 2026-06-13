@@ -103,6 +103,13 @@ const Footer = () => {
                 <span>Contact</span>
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
+              <a
+                href="https://blog.arrlink.com"
+                className="group inline-flex items-center gap-1 text-sm text-white/65 hover:text-white transition-colors font-sans w-fit"
+              >
+                <span>Blog</span>
+                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
             </div>
             <div className="flex flex-col gap-4">
               <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-white/40">
@@ -115,9 +122,6 @@ const Footer = () => {
                 <span>info@arrlink.com</span>
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <span className="text-xs text-white/40 font-normal">
-                Mon — Fri · 9am — 6pm IST
-              </span>
             </div>
           </div>
         </div>

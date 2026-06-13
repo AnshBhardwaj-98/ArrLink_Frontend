@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "https://blog.arrlink.com", label: "Blog", external: true },
 ];
 
 const Navbar = () => {
@@ -46,13 +47,9 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-10">
           {links.map((link) => {
-            const active = isActive(link.to);
-            return (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="relative group text-[11px] tracking-[0.25em] uppercase font-medium transition-colors duration-300"
-              >
+            const active = !link.external && isActive(link.to);
+            const content = (
+              <>
                 <span
                   className={
                     active
@@ -71,6 +68,17 @@ const Navbar = () => {
                   }`}
                   style={{ transformOrigin: "left center" }}
                 />
+              </>
+            );
+            const className =
+              "relative group text-[11px] tracking-[0.25em] uppercase font-medium transition-colors duration-300";
+            return link.external ? (
+              <a key={link.to} href={link.to} className={className}>
+                {content}
+              </a>
+            ) : (
+              <Link key={link.to} to={link.to} className={className}>
+                {content}
               </Link>
             );
           })}
@@ -100,15 +108,25 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-border px-6 py-10 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
           {links.map((link) => {
-            const active = isActive(link.to);
-            return (
+            const active = !link.external && isActive(link.to);
+            const className = `text-sm tracking-[0.2em] uppercase font-bold text-center transition-colors ${
+              active ? "text-foreground" : "text-foreground/70"
+            }`;
+            return link.external ? (
+              <a
+                key={link.to}
+                href={link.to}
+                onClick={() => setOpen(false)}
+                className={className}
+              >
+                {link.label}
+              </a>
+            ) : (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className={`text-sm tracking-[0.2em] uppercase font-bold text-center transition-colors ${
-                  active ? "text-foreground" : "text-foreground/70"
-                }`}
+                className={className}
               >
                 {link.label}
               </Link>
