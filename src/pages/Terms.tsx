@@ -1,8 +1,10 @@
+import { useSEO } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientFloor from "@/components/AmbientFloor";
 
 const Terms = () => {
+  useSEO("/terms");
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />

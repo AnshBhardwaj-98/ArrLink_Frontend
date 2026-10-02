@@ -11,6 +11,7 @@ yarn.lock
 # ============================================================================
 dist/
 dist-ssr/
+dist-server/
 build/
 .vite/
 *.tsbuildinfo

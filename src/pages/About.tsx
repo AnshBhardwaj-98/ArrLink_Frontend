@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientFloor from "@/components/AmbientFloor";
@@ -37,6 +38,7 @@ const specializations = [
 ];
 
 const About = () => {
+  useSEO("/about");
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
@@ -57,7 +59,7 @@ const About = () => {
             </h1>
             <div className="w-16 h-px bg-foreground/20 mx-auto mb-10" />
             <p className="text-foreground text-xl md:text-3xl font-display leading-relaxed max-w-3xl mx-auto font-medium">
-              "ArrLink builds high-performance software systems for businesses that depend on operational precision."
+              "ArrLink is an AI-accelerated software development company. We turn difficult operating problems into production-ready software — custom platforms, generative AI and SaaS products."
             </p>
           </div>
 

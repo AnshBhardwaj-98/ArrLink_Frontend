@@ -1,0 +1,29 @@
+# ArrLink
+
+> ArrLink is an AI-accelerated software development company. We build custom software, generative AI applications, AI agents, SaaS products, MVPs, data platforms and web/mobile apps for startups and enterprises worldwide.
+
+## Services
+- Generative AI development: LLM apps, RAG copilots, custom-trained models
+- AI agents & automation: chatbots, voice bots, workflow agents integrated with CRM and WhatsApp
+- Custom software development: web platforms, internal tools, enterprise systems
+- SaaS & MVP development: idea to production MVP in 4–8 weeks, then multi-tenant SaaS
+- Data engineering & analytics: pipelines, warehouses, dashboards
+- Web & mobile app development: websites and cross-platform iOS/Android apps
+
+## Selected work
+- Imagine.bo (Synergylabs): prompt-to-production AI app builder
+- Krinos AI: HIPAA-compliant AI dental diagnostics platform
+- Mythyaverse: ECG arrhythmia prediction model
+- Sharda University: ML fake-review detection via network-traffic analysis
+
+## Industries
+Healthcare, finance & fintech, e-commerce & retail, logistics & supply chain, education, manufacturing.
+
+## Pages
+- [Home](https://www.arrlink.com/)
+- [About](https://www.arrlink.com/about)
+- [Contact](https://www.arrlink.com/contact)
+- [Blog](https://blog.arrlink.com)
+
+## Contact
+info@arrlink.com

@@ -37,21 +37,21 @@ const CTASection = () => {
         <div className="inline-flex items-center gap-2.5 mb-7">
           <span className="h-px w-6 bg-white/40" />
           <p className="text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-white/60">
-            Synthesis Session
+            Free Strategy Call
           </p>
           <span className="h-px w-6 bg-white/40" />
         </div>
 
         <h2 className="text-3xl md:text-5xl lg:text-7xl text-white font-display font-bold
                        mb-7 leading-[1.05] tracking-tighter text-balance">
-          Ready to{" "}
-          <span className="font-serif font-normal text-[1.08em]">redefine</span>
+          Have a problem worth{" "}
+          <span className="font-serif font-normal text-[1.08em]">solving?</span>
           <br />
-          your digital core?
+          Let&apos;s build it.
         </h2>
 
         <p className="text-white/70 text-sm md:text-base font-normal mb-10 max-w-2xl mx-auto font-sans text-balance">
-          Join the vanguard of engineering excellence. Schedule your initial synthesis session today.
+          Tell us what you're trying to build. In one 30-minute call we'll map the scope, the fastest path to production and a tailored proposal — no obligation.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -64,7 +64,7 @@ const CTASection = () => {
                        transition-all duration-300
                        inline-flex items-center justify-center gap-2"
           >
-            <span>Begin Consultation</span>
+            <span>Book a Free Strategy Call</span>
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Link>
           <a

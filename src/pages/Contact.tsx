@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientFloor from "@/components/AmbientFloor";
@@ -5,6 +6,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  useSEO("/contact");
   const [form, setForm] = useState({
     name: "",
     email: "",

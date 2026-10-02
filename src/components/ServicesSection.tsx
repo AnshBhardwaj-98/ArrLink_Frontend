@@ -1,43 +1,43 @@
-import { Sparkles, Code2, Cloud, Building2, Database, Smartphone, ArrowUpRight } from "lucide-react";
+import { Sparkles, Bot, Code2, Cloud, Database, Smartphone } from "lucide-react";
 import AmbientFloor from "./AmbientFloor";
 import { useReveal } from "@/hooks/use-reveal";
 
 const services = [
   {
     icon: Sparkles,
-    title: "AI Solutions",
-    tag: "Intelligence",
-    description: "Cutting-edge machine learning models and cognitive automation systems designed to optimize decision-making and business intelligence.",
+    title: "Generative AI Development",
+    tag: "Gen AI",
+    description: "LLM-powered applications, RAG copilots and custom-trained models that plug into your data and workflows — built for accuracy, privacy and real production load.",
+  },
+  {
+    icon: Bot,
+    title: "AI Agents & Automation",
+    tag: "Agents",
+    description: "Autonomous AI agents, chatbots and voice bots that handle support, sales and back-office operations — integrated with your CRM, WhatsApp and internal tools.",
   },
   {
     icon: Code2,
-    title: "Software Development",
+    title: "Custom Software Development",
     tag: "Craft",
-    description: "Bespoke high-performance software engineering using modern stacks to build robust, scalable, and secure digital infrastructure.",
+    description: "Bespoke web platforms, internal tools and enterprise systems engineered around your exact workflow — the fit of custom software at the speed of packaged software.",
   },
   {
     icon: Cloud,
-    title: "SaaS Solutions",
+    title: "SaaS & MVP Development",
     tag: "Scale",
-    description: "Multi-tenant cloud architectures engineered for rapid scaling, seamless integration, and exceptional user experience.",
-  },
-  {
-    icon: Building2,
-    title: "Enterprise Solutions",
-    tag: "Systems",
-    description: "Complex system integrations and digital transformation strategies for large-scale organizations seeking operational excellence.",
+    description: "From idea to launched MVP in weeks, then to a multi-tenant SaaS product with billing, auth, analytics and the architecture to scale.",
   },
   {
     icon: Database,
-    title: "Data Engineering",
+    title: "Data Engineering & Analytics",
     tag: "Foundations",
-    description: "Robust data pipelines and warehousing solutions that transform raw data into actionable insights with high availability and integrity.",
+    description: "Data pipelines, warehouses and dashboards that turn scattered operational data into real-time insight and the foundation your AI needs.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Development",
+    title: "Web & Mobile App Development",
     tag: "Native",
-    description: "Premium cross-platform and native mobile applications crafted with precision, focus on performance and intuitive design.",
+    description: "High-performance websites and cross-platform iOS and Android apps — fast, accessible, SEO-ready and designed to convert.",
   },
 ];
 
@@ -66,14 +66,9 @@ const ServiceCard = ({ s, index }: { s: typeof services[number]; index: number }
         {s.title}
       </h3>
 
-      <p className="relative text-foreground/60 leading-relaxed text-sm font-sans font-normal mb-7 max-w-[95%]">
+      <p className="relative text-foreground/60 leading-relaxed text-sm font-sans font-normal max-w-[95%]">
         {s.description}
       </p>
-
-      <div className="relative mt-auto flex items-center gap-1.5 text-foreground/55 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-500">
-        <span className="text-[10px] tracking-[0.25em] uppercase font-medium">Learn more</span>
-        <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
-      </div>
     </div>
   );
 };
@@ -89,14 +84,14 @@ const ServicesSection = () => {
         <div ref={headerRef} className="reveal mb-16 max-w-3xl">
           <div className="section-marker mb-6">
             <span className="h-px w-6 bg-foreground/40" />
-            <span>Core Intelligence</span>
+            <span>Our Services</span>
           </div>
           <h2 className="text-4xl md:text-6xl text-foreground font-display font-bold mb-5 tracking-tighter">
-            Engineering across the{" "}
-            <span className="font-serif font-normal text-[1.08em]">digital stack.</span>
+            AI &amp; software development{" "}
+            <span className="font-serif font-normal text-[1.08em]">services.</span>
           </h2>
           <p className="text-foreground/60 text-base md:text-lg leading-relaxed max-w-xl">
-            Six disciplines, one studio. We pair the rigor of architecture with the speed of modern delivery.
+            Six disciplines, one team. Enterprise-grade engineering paired with AI-native delivery — so you get production software, not a prototype that stalls.
           </p>
         </div>
 

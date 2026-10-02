@@ -4,6 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { to: "/", label: "Home" },
+  { to: "/#services", label: "Services" },
+  { to: "/#work", label: "Work" },
+  { to: "/#industries", label: "Industries" },
   { to: "/about", label: "About" },
   { to: "https://blog.arrlink.com", label: "Blog", external: true },
 ];
@@ -11,7 +14,7 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -21,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   const isActive = (to: string) =>
-    to === "/" ? pathname === "/" : pathname.startsWith(to);
+    to === "/" ? pathname === "/" && !hash : !to.includes("#") && pathname.startsWith(to);
 
   return (
     <nav

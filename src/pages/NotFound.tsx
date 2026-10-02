@@ -1,7 +1,9 @@
+import { useSEO } from "@/hooks/use-seo";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 const NotFound = () => {
+  useSEO("/404");
   const location = useLocation();
 
   useEffect(() => {

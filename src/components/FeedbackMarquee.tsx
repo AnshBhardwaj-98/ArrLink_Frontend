@@ -4,7 +4,7 @@ import AmbientFloor from "./AmbientFloor";
 
 const feedback = [
   {
-    text: "Aethernetics built Imagine.bo into exactly what we envisioned — a platform that turns a single prompt into a fully deployed, production-ready application. Their engineering depth and speed of execution is unmatched.",
+    text: "ArrLink built Imagine.bo into exactly what we envisioned — a platform that turns a single prompt into a fully deployed, production-ready application. Their engineering depth and speed of execution is unmatched.",
     author: "Sushil Kumar",
     company: "Synergylabs",
     role: "CEO",
@@ -13,7 +13,7 @@ const feedback = [
     project: "Imagine.bo",
   },
   {
-    text: "Working with Aethernetics on our ML-driven cybersecurity research was exceptional. They built a robust fake review detection system based on network traffic analysis that exceeded our academic benchmarks.",
+    text: "Working with ArrLink on our ML-driven cybersecurity research was exceptional. They built a robust fake review detection system based on network traffic analysis that exceeded our academic benchmarks.",
     author: "Saptadeepa Kalita",
     company: "Sharda University",
     role: "Assistant Professor",
@@ -22,7 +22,7 @@ const feedback = [
     project: "ML Cybersecurity & Fake Review Detection",
   },
   {
-    text: "The ECG arrhythmia prediction model Aethernetics delivered for Mythyaverse was clinically precise and production-ready. They translated complex medical requirements into an AI system that genuinely saves lives.",
+    text: "The ECG arrhythmia prediction model ArrLink delivered for Mythyaverse was clinically precise and production-ready. They translated complex medical requirements into an AI system that genuinely saves lives.",
     author: "Anmol Gupta",
     company: "Mythyaverse",
     role: "CEO",
@@ -31,7 +31,7 @@ const feedback = [
     project: "ECG Arrhythmia Prediction",
   },
   {
-    text: "Krinos AI is redefining dental diagnostics — and Aethernetics has been instrumental in building the AI backbone that powers our HIPAA-compliant platform. From CBCT analysis to automated insurance claims, their precision engineering is setting a new benchmark for oral healthcare.",
+    text: "Krinos AI is redefining dental diagnostics — and ArrLink has been instrumental in building the AI backbone that powers our HIPAA-compliant platform. From CBCT analysis to automated insurance claims, their precision engineering is setting a new benchmark for oral healthcare.",
     author: "Krishna Gupta",
     company: "Krinos AI",
     role: "CEO",

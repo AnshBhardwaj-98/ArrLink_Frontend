@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="inline-flex items-center gap-2.5 mb-5">
             <span className="h-px w-6 bg-white/40" />
             <p className="text-[10px] tracking-[0.35em] uppercase font-medium text-white/50">
-              Engineering Atelier
+              AI-Accelerated Software Development
             </p>
           </div>
           <h3 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-white">
@@ -44,8 +44,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
           <div className="max-w-sm">
             <p className="text-white/65 text-sm leading-relaxed font-sans font-normal mb-6">
-              Architecting high-performance digital ecosystems through bespoke
-              software engineering and artificial intelligence.
+              ArrLink is an AI development company building custom software,
+              generative AI applications, AI agents and SaaS products —
+              production-ready in weeks, not months.
             </p>
             <div className="flex gap-3">
               <a
@@ -128,7 +129,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[11px] tracking-[0.1em] text-white/40 font-sans">
-            © {new Date().getFullYear()} ArrLink. Designed for Excellence.
+            © {new Date().getFullYear()} ArrLink. AI &amp; custom software development.
           </p>
           <div className="flex gap-8">
             <Link

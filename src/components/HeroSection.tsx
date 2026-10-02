@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowUpRight, Activity, Cpu, Sparkles, Zap } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 
 const HeroSection = () => {
@@ -55,7 +55,7 @@ const HeroSection = () => {
           >
             <span className="h-px w-6 bg-foreground/40" />
             <p className="text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-foreground/55">
-              Engineering Atelier 
+              AI-Accelerated Software Development
             </p>
           </div>
 
@@ -65,15 +65,14 @@ const HeroSection = () => {
                        text-foreground font-display font-bold text-balance"
             style={{ transitionDelay: "80ms" }}
           >
-            Engineering
+            Custom software &amp; AI,
             <br />
-            the operating layer
-            <br />
-            of{" "}
+            built at the{" "}
             <span className="font-serif font-normal text-[1.08em] leading-none">
-              tomorrow&apos;s
-            </span>{" "}
-            enterprise.
+              speed
+            </span>
+            <br />
+            of your business.
           </h1>
 
           <p
@@ -82,7 +81,7 @@ const HeroSection = () => {
                        leading-relaxed font-normal font-sans text-balance"
             style={{ transitionDelay: "200ms" }}
           >
-            We design and ship high-fidelity AI and software systems for teams who measure their work in milliseconds, uptime, and revenue.
+            ArrLink is an AI development company that turns hard operating problems into production-ready software — generative AI apps, AI agents, SaaS platforms and MVPs, delivered in weeks at a fraction of traditional cost.
           </p>
 
           <div
@@ -99,11 +98,11 @@ const HeroSection = () => {
                          transition-all duration-300
                          inline-flex items-center justify-center gap-2"
             >
-              <span>Schedule Consultation</span>
+              <span>Book a Free Strategy Call</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </Link>
-            <Link
-              to="/about"
+            <a
+              href="#services"
               className="group relative w-full sm:w-auto px-7 py-4 rounded-md
                          border border-foreground/20 text-foreground
                          text-xs tracking-[0.2em] uppercase font-bold
@@ -111,9 +110,9 @@ const HeroSection = () => {
                          transition-all duration-300
                          inline-flex items-center justify-center gap-2"
             >
-              <span>Explore the Atelier</span>
+              <span>Explore Services</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-foreground/60 group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-            </Link>
+            </a>
           </div>
         </div>
 
