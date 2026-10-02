@@ -1,8 +1,10 @@
 import { Plus } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import AmbientFloor from "./AmbientFloor";
+import JsonLd from "./JsonLd";
+import type { FAQ } from "@/content/services";
 
-const faqs = [
+const homeFaqs: FAQ[] = [
   {
     q: "What does ArrLink do?",
     a: "ArrLink is an AI-accelerated software development company. We design, build and run custom software, generative AI applications, AI agents, SaaS products and mobile apps for startups and enterprises.",
@@ -33,24 +35,25 @@ const faqs = [
   },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 
-const FAQSection = () => {
+const FAQSection = ({ faqs = homeFaqs }: { faqs?: FAQ[] }) => {
   const headerRef = useReveal<HTMLDivElement>();
   const listRef = useReveal<HTMLDivElement>();
 
   return (
     <section id="faq" className="relative py-32 px-6 bg-background overflow-hidden">
       <AmbientFloor />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 grid lg:grid-cols-[1fr_1.6fr] gap-14 lg:gap-20 items-start">
         <div ref={headerRef} className="reveal lg:sticky lg:top-32">

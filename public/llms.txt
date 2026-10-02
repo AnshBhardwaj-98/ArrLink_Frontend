@@ -21,6 +21,13 @@ Healthcare, finance & fintech, e-commerce & retail, logistics & supply chain, ed
 
 ## Pages
 - [Home](https://www.arrlink.com/)
+- [Services](https://www.arrlink.com/services)
+- [AI Agent Development](https://www.arrlink.com/services/ai-agent-development)
+- [AI MVP Development](https://www.arrlink.com/services/ai-mvp-development)
+- [Generative AI Development](https://www.arrlink.com/services/generative-ai-development)
+- [Custom Software Development](https://www.arrlink.com/services/custom-software-development)
+- [SaaS Development](https://www.arrlink.com/services/saas-development)
+- [Industries](https://www.arrlink.com/industries): healthcare, finance, e-commerce, logistics, education, manufacturing
 - [About](https://www.arrlink.com/about)
 - [Contact](https://www.arrlink.com/contact)
 - [Blog](https://blog.arrlink.com)

@@ -12,9 +12,9 @@ const setMeta = (attr: "name" | "property", key: string, content: string) => {
 };
 
 /** Keeps title, description, canonical and social tags in sync on client-side navigation. */
-export function useSEO(path: keyof typeof routeMeta) {
+export function useSEO(path: string) {
   useEffect(() => {
-    const { title, description, noindex } = routeMeta[path];
+    const { title, description, noindex } = routeMeta[path] ?? routeMeta["/404"];
     const url = `${SITE_URL}${path}`;
     document.title = title;
     setMeta("name", "description", description);

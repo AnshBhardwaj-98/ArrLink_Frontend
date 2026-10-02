@@ -69,3 +69,14 @@ for (const route of Object.keys(routeMeta)) {
   fs.writeFileSync(out, pageHtml(route));
   console.log(`prerendered ${route} -> ${path.relative(root, out)}`);
 }
+
+// Sitemap is generated from the same route list, so new pages can never be missed.
+const today = new Date().toISOString().slice(0, 10);
+const urls = Object.entries(routeMeta)
+  .filter(([, meta]) => !meta.noindex)
+  .map(([route]) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`);
+fs.writeFileSync(
+  path.join(dist, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`,
+);
+console.log(`sitemap.xml: ${urls.length} urls`);

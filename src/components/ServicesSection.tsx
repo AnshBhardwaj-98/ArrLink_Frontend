@@ -1,29 +1,40 @@
-import { Sparkles, Bot, Code2, Cloud, Database, Smartphone } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Sparkles, Bot, Code2, Cloud, Database, Smartphone, ArrowUpRight } from "lucide-react";
 import AmbientFloor from "./AmbientFloor";
 import { useReveal } from "@/hooks/use-reveal";
 
-const services = [
+const services: {
+  icon: typeof Sparkles;
+  title: string;
+  slug?: string;
+  tag: string;
+  description: string;
+}[] = [
   {
     icon: Sparkles,
     title: "Generative AI Development",
+    slug: "generative-ai-development",
     tag: "Gen AI",
     description: "LLM-powered applications, RAG copilots and custom-trained models that plug into your data and workflows — built for accuracy, privacy and real production load.",
   },
   {
     icon: Bot,
     title: "AI Agents & Automation",
+    slug: "ai-agent-development",
     tag: "Agents",
     description: "Autonomous AI agents, chatbots and voice bots that handle support, sales and back-office operations — integrated with your CRM, WhatsApp and internal tools.",
   },
   {
     icon: Code2,
     title: "Custom Software Development",
+    slug: "custom-software-development",
     tag: "Craft",
     description: "Bespoke web platforms, internal tools and enterprise systems engineered around your exact workflow — the fit of custom software at the speed of packaged software.",
   },
   {
     icon: Cloud,
     title: "SaaS & MVP Development",
+    slug: "saas-development",
     tag: "Scale",
     description: "From idea to launched MVP in weeks, then to a multi-tenant SaaS product with billing, auth, analytics and the architecture to scale.",
   },
@@ -41,7 +52,7 @@ const services = [
   },
 ];
 
-const ServiceCard = ({ s, index }: { s: typeof services[number]; index: number }) => {
+const ServiceCard = ({ s, index }: { s: (typeof services)[number]; index: number }) => {
   const ref = useReveal<HTMLDivElement>({ threshold: 0.2 });
   return (
     <div
@@ -69,6 +80,16 @@ const ServiceCard = ({ s, index }: { s: typeof services[number]; index: number }
       <p className="relative text-foreground/60 leading-relaxed text-sm font-sans font-normal max-w-[95%]">
         {s.description}
       </p>
+
+      {s.slug && (
+        <Link
+          to={`/services/${s.slug}`}
+          className="relative mt-auto pt-7 inline-flex items-center gap-1.5 text-[10px] tracking-[0.25em] uppercase font-bold text-foreground/60 hover:text-foreground transition-colors"
+        >
+          <span>Explore {s.title}</span>
+          <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+        </Link>
+      )}
     </div>
   );
 };

@@ -1,42 +1,8 @@
 import { useReveal } from "@/hooks/use-reveal";
 import AmbientFloor from "./AmbientFloor";
+import { projects, type Project } from "@/content/projects";
 
-const projects = [
-  {
-    client: "Synergylabs",
-    title: "Imagine.bo — prompt-to-production app builder",
-    category: "Generative AI · SaaS",
-    description:
-      "An AI platform that turns a single prompt into a fully deployed, production-ready application — from generated code to hosting.",
-    stack: ["LLM orchestration", "Code generation", "Cloud deployment"],
-  },
-  {
-    client: "Krinos AI",
-    title: "AI-powered dental diagnostics platform",
-    category: "Healthcare AI",
-    description:
-      "The AI backbone of a HIPAA-compliant oral-healthcare platform, spanning CBCT scan analysis through to automated insurance claims.",
-    stack: ["Computer vision", "HIPAA compliance", "Claims automation"],
-  },
-  {
-    client: "Mythyaverse",
-    title: "ECG arrhythmia prediction",
-    category: "Clinical ML",
-    description:
-      "A clinically precise, production-ready model that detects cardiac arrhythmias from ECG signals, built against strict medical requirements.",
-    stack: ["Signal processing", "Deep learning", "Model validation"],
-  },
-  {
-    client: "Sharda University",
-    title: "ML fake-review detection",
-    category: "Cybersecurity ML",
-    description:
-      "A fake-review detection system driven by network-traffic analysis that exceeded the research team's academic benchmarks.",
-    stack: ["Traffic analysis", "Classification", "Research tooling"],
-  },
-];
-
-const ProjectCard = ({ p, index }: { p: typeof projects[number]; index: number }) => {
+export const ProjectCard = ({ p, index }: { p: Project; index: number }) => {
   const ref = useReveal<HTMLElement>({ threshold: 0.2 });
   return (
     <article

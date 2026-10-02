@@ -1,4 +1,5 @@
 import { HeartPulse, Landmark, ShoppingBag, Truck, GraduationCap, Factory } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/use-reveal";
 import AmbientFloor from "./AmbientFloor";
 
@@ -6,41 +7,48 @@ const industries = [
   {
     icon: HeartPulse,
     title: "Healthcare",
+    slug: "healthcare",
     description: "HIPAA-aware diagnostic AI, clinical prediction models and patient-facing platforms.",
   },
   {
     icon: Landmark,
     title: "Finance & Fintech",
+    slug: "finance",
     description: "Fraud detection, compliance automation, voice agents and secure transaction platforms.",
   },
   {
     icon: ShoppingBag,
     title: "E-Commerce & Retail",
+    slug: "ecommerce",
     description: "Personalization engines, AI shopping assistants and marketplaces built to scale.",
   },
   {
     icon: Truck,
     title: "Logistics & Supply Chain",
+    slug: "logistics",
     description: "Route optimization, real-time tracking, demand forecasting and warehouse automation.",
   },
   {
     icon: GraduationCap,
     title: "Education & EdTech",
+    slug: "education",
     description: "Learning platforms, AI tutors and assessment tools for schools, universities and creators.",
   },
   {
     icon: Factory,
     title: "Manufacturing",
+    slug: "manufacturing",
     description: "Predictive maintenance, quality inspection with computer vision and production analytics.",
   },
 ];
 
 const IndustryCard = ({ item, index }: { item: typeof industries[number]; index: number }) => {
-  const ref = useReveal<HTMLDivElement>({ threshold: 0.2 });
+  const ref = useReveal<HTMLAnchorElement>({ threshold: 0.2 });
   return (
-    <div
+    <Link
       ref={ref}
-      className="reveal group bg-background p-7 md:p-8 hover:bg-surface-container-low transition-colors duration-500"
+      to={`/industries/${item.slug}`}
+      className="reveal group block bg-background p-7 md:p-8 hover:bg-surface-container-low transition-colors duration-500"
       style={{ transitionDelay: `${(index % 3) * 80}ms` }}
     >
       <item.icon
@@ -51,7 +59,7 @@ const IndustryCard = ({ item, index }: { item: typeof industries[number]; index:
         {item.title}
       </h3>
       <p className="text-foreground/55 text-sm leading-relaxed">{item.description}</p>
-    </div>
+    </Link>
   );
 };
 

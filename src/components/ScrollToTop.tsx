@@ -12,7 +12,8 @@ const ScrollToTop = () => {
       });
       return;
     }
-    window.scrollTo(0, 0);
+    // "instant" overrides the global smooth scroll-behavior so new pages start at the top.
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname, hash]);
 
   return null;

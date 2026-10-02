@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/#services", label: "Services" },
+  { to: "/services", label: "Services" },
   { to: "/#work", label: "Work" },
-  { to: "/#industries", label: "Industries" },
+  { to: "/industries", label: "Industries" },
   { to: "/about", label: "About" },
   { to: "https://blog.arrlink.com", label: "Blog", external: true },
 ];
