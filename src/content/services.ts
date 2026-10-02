@@ -84,7 +84,7 @@ export const services: Service[] = [
       { title: "Model-agnostic", desc: "We pick the right model for accuracy, latency and cost — including private, self-hosted models when your data can't leave your infrastructure." },
       { title: "You own everything", desc: "Source code, prompts, evaluation sets and infrastructure are yours. No per-seat licensing, no lock-in." },
     ],
-    projectIds: ["imagine-bo", "krinos-ai"],
+    projectIds: ["conectdesk", "imagine-bo", "krinos-ai"],
     industrySlugs: ["ecommerce", "healthcare", "finance", "logistics"],
     faqs: [
       {
@@ -220,7 +220,7 @@ export const services: Service[] = [
       { title: "Measured, not guessed", desc: "Every release is scored against an evaluation set, so you see accuracy and cost numbers instead of anecdotes." },
       { title: "Your data stays yours", desc: "Private deployments, no training on your data, and architecture designed around your compliance requirements." },
     ],
-    projectIds: ["imagine-bo", "krinos-ai", "mythyaverse-ecg"],
+    projectIds: ["conectdesk", "imagine-bo", "krinos-ai", "mythyaverse-ecg"],
     industrySlugs: ["healthcare", "finance", "education"],
     faqs: [
       {
@@ -289,7 +289,7 @@ export const services: Service[] = [
       { title: "Architecture first", desc: "Every system starts with a deliberate data model and APIs designed to evolve without breaking." },
       { title: "No lock-in", desc: "You own the code and infrastructure, with documentation your team can work from." },
     ],
-    projectIds: ["krinos-ai", "sharda-fake-reviews"],
+    projectIds: ["vnytros", "conectdesk", "krinos-ai", "sharda-fake-reviews"],
     industrySlugs: ["logistics", "finance", "manufacturing", "education"],
     faqs: [
       {
@@ -366,7 +366,7 @@ export const services: Service[] = [
       { title: "Platform done right early", desc: "Tenancy, billing and permissions designed up front, so growth doesn't force a rewrite." },
       { title: "AI with healthy margins", desc: "We design AI features with caching, model routing and usage limits so they stay profitable." },
     ],
-    projectIds: ["imagine-bo"],
+    projectIds: ["conectdesk", "vnytros", "imagine-bo", "krinos-ai"],
     industrySlugs: ["education", "ecommerce", "finance"],
     faqs: [
       {

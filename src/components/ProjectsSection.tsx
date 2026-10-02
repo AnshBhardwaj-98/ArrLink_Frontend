@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import AmbientFloor from "./AmbientFloor";
 import { projects, type Project } from "@/content/projects";
@@ -22,6 +23,17 @@ export const ProjectCard = ({ p, index }: { p: Project; index: number }) => {
         {p.title}
       </h3>
       <p className="text-foreground/60 leading-relaxed mb-8">{p.description}</p>
+      {p.href && (
+        <a
+          href={p.href}
+          target="_blank"
+          rel="noopener"
+          className="mb-8 inline-flex w-fit items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-primary hover:text-foreground transition-colors"
+        >
+          <span>Visit {p.hrefLabel ?? "project"}</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
+      )}
       <div className="mt-auto flex flex-wrap gap-x-5 gap-y-1.5">
         {p.stack.map((s) => (
           <span
@@ -55,8 +67,8 @@ const ProjectsSection = () => {
             <span className="font-serif font-normal text-[1.08em]">production.</span>
           </h2>
           <p className="text-foreground/60 text-base md:text-lg leading-relaxed max-w-xl">
-            From generative AI platforms to clinical-grade machine learning — a few of the
-            systems we&apos;ve designed, built and shipped for our clients.
+            From generative AI platforms to clinical-grade machine learning — systems we&apos;ve
+            designed, built and shipped for our clients, and the products we run ourselves.
           </p>
         </div>
 

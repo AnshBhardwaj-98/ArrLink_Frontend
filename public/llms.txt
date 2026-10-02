@@ -11,6 +11,8 @@
 - Web & mobile app development: websites and cross-platform iOS/Android apps
 
 ## Selected work
+- ConectDesk (ArrLink product, desk.arrlink.com): multi-tenant AI omnichannel support desk — WhatsApp, Instagram, Messenger, Telegram, email, live chat and phone in one inbox
+- Vnytros (ArrLink product, vnytros.dev): DNS & email deliverability automation with a REST API and 25 MCP tools for AI agents
 - Imagine.bo (Synergylabs): prompt-to-production AI app builder
 - Krinos AI: HIPAA-compliant AI dental diagnostics platform
 - Mythyaverse: ECG arrhythmia prediction model

@@ -129,7 +129,7 @@ export const industries: Industry[] = [
       { title: "Demand & inventory analytics", desc: "Forecasting and dashboards that reduce stock-outs and overstock." },
     ],
     serviceSlugs: ["ai-agent-development", "saas-development", "ai-mvp-development"],
-    projectIds: ["sharda-fake-reviews", "imagine-bo"],
+    projectIds: ["conectdesk", "sharda-fake-reviews"],
     faqs: [
       { q: "Can an AI agent handle e-commerce customer support?", a: "Yes. AI agents can resolve order tracking, returns, refunds and product questions end-to-end by connecting to your store, OMS and helpdesk, escalating complex cases to your team." },
       { q: "Do you build WhatsApp commerce bots?", a: "Yes. We build AI agents on the WhatsApp Business API for product discovery, order updates, abandoned-cart recovery and support." },
@@ -209,7 +209,7 @@ export const industries: Industry[] = [
       { title: "Research & analytics", desc: "ML research tooling and learning analytics dashboards." },
     ],
     serviceSlugs: ["saas-development", "generative-ai-development", "ai-mvp-development"],
-    projectIds: ["sharda-fake-reviews"],
+    projectIds: ["conectdesk", "sharda-fake-reviews"],
     faqs: [
       { q: "Can you build an AI tutor for our curriculum?", a: "Yes. We build AI tutors grounded in your own curriculum and materials, with guardrails for age-appropriate, accurate responses and analytics for teachers." },
       { q: "Do you build custom LMS platforms?", a: "Yes. We build custom learning platforms or extend existing ones with live classes, assessments, payments, certificates and AI features." },
