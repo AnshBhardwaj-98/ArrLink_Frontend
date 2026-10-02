@@ -106,3 +106,5 @@ conf_file.conf
 .next/
 out/
 public/dist/
+# Source video for the hero frame sequence (frames live in public/frames/hero)
+/hero.mp4

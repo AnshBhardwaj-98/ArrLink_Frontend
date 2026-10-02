@@ -112,7 +112,7 @@ const FeedbackMarquee = () => {
                 </p>
 
                 {/* Divider */}
-                <div className="w-full h-[0.5px] bg-border/10" />
+                <div className="w-full h-[0.5px] bg-foreground/10" />
 
                 {/* Author info */}
                 <div className="flex items-center gap-2.5 w-full">

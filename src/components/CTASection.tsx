@@ -8,32 +8,25 @@ const CTASection = () => {
   return (
     <section
       id="cta"
-      className="relative py-32 px-6 overflow-hidden"
-      style={{ background: "hsl(238 54% 38%)", color: "hsl(0 0% 100%)" }}
+      className="relative py-28 md:py-40 px-6 overflow-hidden bg-[hsl(var(--inverse-bg))] text-white"
     >
-      {/* Subtle inner glow */}
+      {/* Bookend: the hero's final eclipse frame, dimmed so the copy stays readable */}
+      <picture aria-hidden>
+        <source media="(max-aspect-ratio: 1/1)" srcSet="/frames/hero/mobile/frame_0120.webp" />
+        <img
+          src="/frames/hero/desktop/frame_0120.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-bottom opacity-80"
+        />
+      </picture>
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                   h-[60vh] w-[80%] blur-3xl opacity-50"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, hsl(307 61% 63% / 0.35) 0%, transparent 70%)",
-        }}
+        className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--background))] via-[hsl(var(--background)/0.55)] to-transparent"
       />
 
-      {/* Hairline grid texture on indigo — barely visible */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-30"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, hsl(0 0% 100% / 0.06) 1px, transparent 1px), linear-gradient(to bottom, hsl(0 0% 100% / 0.06) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto text-center">
+      <div ref={ref} className="reveal relative z-10 max-w-4xl mx-auto text-center pb-16 md:pb-24">
         <div className="inline-flex items-center gap-2.5 mb-7">
           <span className="h-px w-6 bg-white/40" />
           <p className="text-[10px] md:text-xs tracking-[0.35em] uppercase font-medium text-white/60">
@@ -58,7 +51,7 @@ const CTASection = () => {
           <Link
             to="/contact"
             className="group w-full sm:w-auto px-7 py-4 rounded-md
-                       bg-white text-foreground
+                       bg-white text-[hsl(var(--background))]
                        text-xs tracking-[0.2em] uppercase font-bold
                        hover:bg-white/90 hover:-translate-y-0.5
                        transition-all duration-300

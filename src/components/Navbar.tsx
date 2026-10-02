@@ -48,7 +48,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
           {links.map((link) => {
             const active = !link.external && isActive(link.to);
             const content = (
@@ -98,7 +98,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground p-1"
+          className="lg:hidden text-foreground p-1"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -109,7 +109,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-border px-6 py-10 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border px-6 py-10 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
           {links.map((link) => {
             const active = !link.external && isActive(link.to);
             const className = `text-sm tracking-[0.2em] uppercase font-bold text-center transition-colors ${

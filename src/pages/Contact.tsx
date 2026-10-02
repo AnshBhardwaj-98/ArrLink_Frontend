@@ -106,7 +106,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setForm({ ...form, name: e.target.value })
                       }
-                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
+                      className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                     />
                   </div>
                   <div className="space-y-2">
@@ -121,7 +121,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
-                      className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
+                      className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                     />
                   </div>
                 </div>
@@ -136,7 +136,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setForm({ ...form, company: e.target.value })
                     }
-                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
+                    className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -151,7 +151,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setForm({ ...form, message: e.target.value })
                     }
-                    className="w-full bg-surface-container-highest/20 border border-border/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl resize-none"
+                    className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl resize-none"
                   />
                 </div>
                 <button
@@ -165,7 +165,7 @@ const Contact = () => {
             )}
           </div>
 
-          <div className="mt-24 pt-16 border-t border-border/10 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+          <div className="mt-24 pt-16 border-t border-foreground/10 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
               <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-foreground/40 mb-4">
                 Email Us

@@ -31,8 +31,8 @@ const Footer = () => {
 
   return (
     <footer
-      className="relative pt-20 pb-12 px-6 overflow-hidden"
-      style={{ background: "hsl(247 27% 9%)", color: "hsl(36 36% 97%)" }}
+      className="relative pt-20 pb-12 px-6 overflow-hidden border-t border-white/10"
+      style={{ background: "hsl(var(--inverse-bg))", color: "hsl(var(--inverse-fg))" }}
     >
       {/* Hairline grid texture */}
       <div
@@ -40,7 +40,7 @@ const Footer = () => {
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
           backgroundImage:
-            "linear-gradient(to right, hsl(36 36% 97% / 0.04) 1px, transparent 1px), linear-gradient(to bottom, hsl(36 36% 97% / 0.04) 1px, transparent 1px)",
+            "linear-gradient(to right, hsl(240 30% 96% / 0.03) 1px, transparent 1px), linear-gradient(to bottom, hsl(240 30% 96% / 0.03) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />

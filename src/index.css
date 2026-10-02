@@ -6,58 +6,59 @@
 
 @layer base {
   :root {
-    /* Editorial Light — warm cream canvas, deep ink type */
-    --background: 36 36% 97%;            /* #FAF7F2 cream */
-    --foreground: 247 27% 12%;           /* #1A1729 deep ink */
+    /* Eclipse Dark — deep space canvas sampled from the hero frames, indigo light, magenta rim */
+    color-scheme: dark;
+    --background: 248 50% 4%;            /* #05040F deep space */
+    --foreground: 240 30% 96%;           /* #F3F3FA starlight */
 
-    --card: 36 30% 95%;
-    --card-foreground: 247 27% 12%;
+    --card: 248 36% 8%;
+    --card-foreground: 240 30% 96%;
 
-    --popover: 36 36% 97%;
-    --popover-foreground: 247 27% 12%;
+    --popover: 248 40% 7%;
+    --popover-foreground: 240 30% 96%;
 
-    --primary: 238 54% 50%;              /* #3B3FC5 indigo */
-    --primary-foreground: 0 0% 100%;
-    --primary-container: 307 61% 63%;    /* #D966CC magenta */
+    --primary: 236 85% 70%;              /* #7680F5 indigo light — readable on dark */
+    --primary-foreground: 248 50% 4%;
+    --primary-container: 307 70% 68%;    /* #E173D8 magenta rim */
 
-    /* Surface tiers — subtly darker cream shades for elevation */
-    --surface: 36 32% 95%;
-    --surface-container-lowest: 36 36% 97%;
-    --surface-container-low: 36 33% 96%;
-    --surface-container: 38 28% 93%;
-    --surface-container-high: 38 25% 90%;
-    --surface-container-highest: 40 22% 87%;
+    /* Surface tiers — each step a little more indigo light */
+    --surface: 248 40% 6%;
+    --surface-container-lowest: 250 60% 2%;
+    --surface-container-low: 248 42% 6%;
+    --surface-container: 248 34% 10%;
+    --surface-container-high: 248 30% 14%;
+    --surface-container-highest: 248 26% 18%;
 
-    --secondary: 307 61% 63%;            /* #D966CC magenta */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 307 70% 68%;
+    --secondary-foreground: 248 50% 4%;
 
-    --muted: 36 20% 90%;
-    --muted-foreground: 247 12% 38%;
+    --muted: 248 28% 13%;
+    --muted-foreground: 240 14% 66%;
 
-    --accent: 264 61% 52%;               /* #9B6FDE accent — slightly darker for cream contrast */
-    --accent-foreground: 0 0% 100%;
+    --accent: 264 80% 72%;
+    --accent-foreground: 248 50% 4%;
 
-    --destructive: 0 75% 50%;
+    --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 247 27% 12% / 0.08;
-    --input: 247 27% 12% / 0.18;
-    --ring: 238 54% 50%;
+    --border: 240 30% 96% / 0.09;
+    --input: 240 30% 96% / 0.16;
+    --ring: 236 85% 70%;
 
     --radius: 0.25rem;
 
-    /* Dark inverse — used by Footer + CTASection for punctuation */
-    --inverse-bg: 247 27% 9%;
-    --inverse-fg: 36 36% 97%;
+    /* Deepest tone — footer and hero edges */
+    --inverse-bg: 250 60% 2%;
+    --inverse-fg: 240 30% 96%;
 
-    --sidebar-background: 36 36% 97%;
-    --sidebar-foreground: 247 27% 12%;
-    --sidebar-primary: 238 54% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 38 25% 90%;
-    --sidebar-accent-foreground: 247 27% 12%;
-    --sidebar-border: 247 27% 12% / 0.08;
-    --sidebar-ring: 238 54% 50%;
+    --sidebar-background: 248 50% 4%;
+    --sidebar-foreground: 240 30% 96%;
+    --sidebar-primary: 236 85% 70%;
+    --sidebar-primary-foreground: 248 50% 4%;
+    --sidebar-accent: 248 30% 14%;
+    --sidebar-accent-foreground: 240 30% 96%;
+    --sidebar-border: 240 30% 96% / 0.09;
+    --sidebar-ring: 236 85% 70%;
   }
 }
 
@@ -67,7 +68,7 @@
   }
 
   .ambient-shadow {
-    box-shadow: 0 30px 60px -20px hsl(var(--foreground) / 0.08);
+    box-shadow: 0 30px 60px -20px hsl(var(--primary) / 0.18);
   }
 
   .gradient-primary {
@@ -97,8 +98,8 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.04;
-    mix-blend-mode: multiply;
+    opacity: 0.05;
+    mix-blend-mode: soft-light;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
@@ -141,8 +142,8 @@
   }
 
   ::selection {
-    background: hsl(var(--foreground));
-    color: hsl(var(--background));
+    background: hsl(var(--primary) / 0.45);
+    color: hsl(var(--foreground));
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -159,68 +160,14 @@
   }
 }
 
-@keyframes orb-drift-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, -30px) scale(1.06); }
-}
-
-@keyframes orb-drift-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-30px, 40px) scale(1.08); }
-}
-
 @keyframes scroll-cue {
   0%, 100% { transform: translateY(0); opacity: 0.4; }
   50% { transform: translateY(8px); opacity: 1; }
 }
 
-@keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes ring-spin-a {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes ring-spin-b {
-  from { transform: rotate(60deg); }
-  to { transform: rotate(-300deg); }
-}
-
-@keyframes ring-spin-c {
-  from { transform: rotate(-60deg); }
-  to { transform: rotate(300deg); }
-}
-
-@keyframes core-pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
-  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 1; }
-}
-
-@keyframes badge-float-a {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes badge-float-b {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-.orb-a { animation: orb-drift-a 18s ease-in-out infinite; }
-.orb-b { animation: orb-drift-b 22s ease-in-out infinite; }
 .animate-scroll-cue { animation: scroll-cue 2.4s ease-in-out infinite; }
-.animate-float-y { animation: float-y 6s ease-in-out infinite; }
-.animate-ring-a { animation: ring-spin-a 28s linear infinite; transform-origin: center; }
-.animate-ring-b { animation: ring-spin-b 36s linear infinite; transform-origin: center; }
-.animate-ring-c { animation: ring-spin-c 44s linear infinite; transform-origin: center; }
-.animate-core-pulse { animation: core-pulse 3.4s ease-in-out infinite; }
-.animate-badge-a { animation: badge-float-a 5s ease-in-out infinite; }
-.animate-badge-b { animation: badge-float-b 6s ease-in-out infinite; }
 
-/* Subtle ambient grid — dark hairlines on cream */
+/* Subtle ambient grid — faint light hairlines on deep space */
 .ambient-floor {
   position: absolute;
   inset: 0;
@@ -236,8 +183,8 @@
   left: 0;
   right: 0;
   background-image:
-    linear-gradient(to right, hsl(var(--foreground) / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    linear-gradient(to right, hsl(var(--foreground) / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.035) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
@@ -257,61 +204,4 @@
   transform-origin: 50% 100%;
   -webkit-mask-image: radial-gradient(ellipse 110% 60% at 50% 100%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
           mask-image: radial-gradient(ellipse 110% 60% at 50% 100%, black 0%, rgba(0, 0, 0, 0.55) 35%, transparent 78%);
-}
-
-/* Inverse — for dark sections (CTA, Footer) sitting inside the cream flow.
-   Use as `<section className="inverse">`. Children inherit dark-mode contrast. */
-.inverse {
-  background: hsl(var(--inverse-bg));
-  color: hsl(var(--inverse-fg));
-  --foreground: var(--inverse-fg);
-  --background: var(--inverse-bg);
-  --border: 36 36% 97% / 0.1;
-}
-
-.inverse .ambient-floor::before,
-.inverse .ambient-floor::after {
-  background-image:
-    linear-gradient(to right, hsl(36 36% 97% / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(36 36% 97% / 0.06) 1px, transparent 1px);
-}
-
-/* Hero perspective floor — kept for legacy use, but the orbital core now
-   dominates the hero centerpiece rather than the floor. */
-.perspective-floor {
-  perspective: 900px;
-  perspective-origin: 50% 0%;
-}
-
-.floor-grid {
-  position: absolute;
-  inset: -50% 0 0 0;
-  background-image:
-    linear-gradient(to right, hsl(var(--foreground) / 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(var(--foreground) / 0.1) 1px, transparent 1px);
-  background-size: 80px 80px;
-  transform: rotateX(60deg);
-  transform-origin: 50% 100%;
-  animation: floor-scroll 14s linear infinite;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
-          mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
-}
-
-@keyframes floor-scroll {
-  0% { background-position-y: 0; }
-  100% { background-position-y: 80px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .floor-grid,
-  .animate-float-y,
-  .animate-ring-a,
-  .animate-ring-b,
-  .animate-ring-c,
-  .animate-core-pulse,
-  .animate-badge-a,
-  .animate-badge-b {
-    animation: none !important;
-  }
-  .animate-core-pulse { transform: translate(-50%, -50%); }
 }
