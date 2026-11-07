@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-const links = [
+const links: { to: string; label: string; external?: boolean }[] = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/#work", label: "Work" },
   { to: "/industries", label: "Industries" },
   { to: "/about", label: "About" },
-  { to: "https://blog.arrlink.com", label: "Blog", external: true },
+  { to: "/blog", label: "Blog" },
 ];
 
 const Navbar = () => {

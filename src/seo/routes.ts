@@ -1,5 +1,6 @@
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
+import { posts, activeCategories } from "@/content/blog";
 
 export const SITE_URL = "https://www.arrlink.com";
 
@@ -7,6 +8,10 @@ export type RouteMeta = {
   title: string;
   description: string;
   noindex?: boolean;
+  /** Open Graph type; defaults to "website". */
+  type?: "website" | "article";
+  /** Last content change (YYYY-MM-DD) for the sitemap; defaults to the build date. */
+  lastmod?: string;
 };
 
 /** Single source of truth for per-route meta — used at runtime and by the prerender script. */
@@ -49,6 +54,24 @@ export const routeMeta: Record<string, RouteMeta> = {
   },
   ...Object.fromEntries(
     industries.map((i) => [`/industries/${i.slug}`, { title: i.metaTitle, description: i.metaDescription }]),
+  ),
+  "/blog": {
+    title: "Blog | AI, Software & SaaS Engineering Insights | ArrLink",
+    description:
+      "Practical guides on AI agents, generative AI, MVPs, custom software, SaaS and manufacturing software — costs, architecture and lessons from real projects.",
+    lastmod: posts[0]?.updated ?? posts[0]?.date,
+  },
+  ...Object.fromEntries(
+    activeCategories().map((c) => [
+      `/blog/category/${c.slug}`,
+      { title: `${c.name} Articles & Guides | ArrLink Blog`, description: c.description },
+    ]),
+  ),
+  ...Object.fromEntries(
+    posts.map((p) => [
+      `/blog/${p.slug}`,
+      { title: p.metaTitle, description: p.description, type: "article" as const, lastmod: p.updated ?? p.date },
+    ]),
   ),
   "/404": {
     title: "Page Not Found | ArrLink",

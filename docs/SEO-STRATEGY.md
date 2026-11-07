@@ -60,7 +60,7 @@ One page per search intent. Each page's title, H1, first paragraph and FAQ targe
 - [ ] Add a founder/team section on `/about` with names, photos, LinkedIn links (E-E-A-T)
 
 ### Phase 3 — Content engine (months 2–6)
-Move the blog from `blog.arrlink.com` to `arrlink.com/blog` (subfolders pass authority to the main site; subdomains mostly don't). Publish **2 articles per week**, each linking to its matching service page:
+The blog lives at `arrlink.com/blog` (subfolders pass authority to the main site; subdomains mostly don't). Posts are Markdown files in `src/content/blog/posts/` — see `_template.md`, or run the `/blog-post` skill in Claude Code. Publish **2 articles per week**, each linking to its matching service page:
 
 | Month | Articles (target keyword) | Links to |
 |---|---|---|

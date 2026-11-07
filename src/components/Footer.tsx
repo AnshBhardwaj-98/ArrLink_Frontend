@@ -1,14 +1,8 @@
-import { Linkedin, Instagram, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/use-reveal";
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
-
-const XIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.482 3.239H4.293L17.607 20.65z" />
-  </svg>
-);
 
 const FooterColumn = ({ heading, links }: { heading: string; links: { to: string; label: string }[] }) => (
   <div className="flex flex-col gap-4">
@@ -61,46 +55,11 @@ const Footer = () => {
 
         <div className="flex flex-col xl:flex-row justify-between items-start gap-12 mb-12">
           <div className="max-w-sm">
-            <p className="text-white/65 text-sm leading-relaxed font-sans font-normal mb-6">
+            <p className="text-white/65 text-sm leading-relaxed font-sans font-normal">
               ArrLink is an AI development company building custom software,
               generative AI applications, AI agents and SaaS products —
               production-ready in weeks, not months.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://www.linkedin.com/company/arrlink-ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-md bg-white/[0.04] border border-white/10
-                           text-white/70 hover:text-white hover:border-white/30
-                           transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" strokeWidth={1.25} />
-              </a>
-              <a
-                href="https://www.instagram.com/arrlink?igsh=amxwajF5OWY1em8y"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-md bg-white/[0.04] border border-white/10
-                           text-white/70 hover:text-white hover:border-white/30
-                           transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" strokeWidth={1.25} />
-              </a>
-              <a
-                href="https://x.com/ArrLink_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-md bg-white/[0.04] border border-white/10
-                           text-white/70 hover:text-white hover:border-white/30
-                           transition-all duration-300"
-                aria-label="X"
-              >
-                <XIcon className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14">
@@ -130,13 +89,13 @@ const Footer = () => {
                 <span>Contact</span>
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
-              <a
-                href="https://blog.arrlink.com"
+              <Link
+                to="/blog"
                 className="group inline-flex items-center gap-1 text-sm text-white/65 hover:text-white transition-colors font-sans w-fit"
               >
                 <span>Blog</span>
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
+              </Link>
             </div>
             <div className="flex flex-col gap-4">
               <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-white/40">

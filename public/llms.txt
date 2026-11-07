@@ -12,7 +12,7 @@
 
 ## Selected work
 - ConectDesk (ArrLink product, desk.arrlink.com): multi-tenant AI omnichannel support desk — WhatsApp, Instagram, Messenger, Telegram, email, live chat and phone in one inbox
-- Vnytros (ArrLink product, vnytros.dev): DNS & email deliverability automation with a REST API and 25 MCP tools for AI agents
+- Manufacturing platform: 300+ table manufacturing data ontology running alongside the client's ERP, with two-way ERP sync, AI T&A extraction from buyer e-mails and end-to-end traceability
 - Imagine.bo (Synergylabs): prompt-to-production AI app builder
 - Krinos AI: HIPAA-compliant AI dental diagnostics platform
 - Mythyaverse: ECG arrhythmia prediction model
@@ -32,7 +32,7 @@ Healthcare, finance & fintech, e-commerce & retail, logistics & supply chain, ed
 - [Industries](https://www.arrlink.com/industries): healthcare, finance, e-commerce, logistics, education, manufacturing
 - [About](https://www.arrlink.com/about)
 - [Contact](https://www.arrlink.com/contact)
-- [Blog](https://blog.arrlink.com)
+- [Blog](https://www.arrlink.com/blog): guides on AI agents, generative AI, MVPs, custom software, SaaS and manufacturing software
 
 ## Contact
 info@arrlink.com

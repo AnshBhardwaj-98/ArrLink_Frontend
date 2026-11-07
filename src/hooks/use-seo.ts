@@ -14,7 +14,7 @@ const setMeta = (attr: "name" | "property", key: string, content: string) => {
 /** Keeps title, description, canonical and social tags in sync on client-side navigation. */
 export function useSEO(path: string) {
   useEffect(() => {
-    const { title, description, noindex } = routeMeta[path] ?? routeMeta["/404"];
+    const { title, description, noindex, type = "website" } = routeMeta[path] ?? routeMeta["/404"];
     const url = `${SITE_URL}${path}`;
     document.title = title;
     setMeta("name", "description", description);
@@ -22,6 +22,7 @@ export function useSEO(path: string) {
     setMeta("property", "og:title", title);
     setMeta("property", "og:description", description);
     setMeta("property", "og:url", url);
+    setMeta("property", "og:type", type);
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", description);
 

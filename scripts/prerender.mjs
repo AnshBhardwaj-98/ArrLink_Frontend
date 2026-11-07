@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
-const { render, routeMeta, SITE_URL } = await import(
+const { render, routeMeta, SITE_URL, posts } = await import(
   path.join(root, "dist-server", "entry-server.js")
 );
 
@@ -31,13 +31,14 @@ const setMeta = (html, attr, key, value) =>
   );
 
 const pageHtml = (route) => {
-  const { title, description, noindex } = routeMeta[route];
+  const { title, description, noindex, type = "website" } = routeMeta[route];
   const url = `${SITE_URL}${route}`;
   let html = template;
   html = replaceOrFail(html, /<title>[\s\S]*?<\/title>/, () => `<title>${escape(title)}</title>`, "<title>");
   html = setMeta(html, "name", "description", description);
   html = setMeta(html, "name", "robots", noindex ? "noindex, follow" : "index, follow");
   html = setMeta(html, "property", "og:url", url);
+  html = setMeta(html, "property", "og:type", type);
   html = setMeta(html, "property", "og:title", title);
   html = setMeta(html, "property", "og:description", description);
   html = setMeta(html, "name", "twitter:title", title);
@@ -74,9 +75,39 @@ for (const route of Object.keys(routeMeta)) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = Object.entries(routeMeta)
   .filter(([, meta]) => !meta.noindex)
-  .map(([route]) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`);
+  .map(([route, meta]) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${meta.lastmod ?? today}</lastmod>\n  </url>`);
 fs.writeFileSync(
   path.join(dist, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`,
 );
 console.log(`sitemap.xml: ${urls.length} urls`);
+
+// RSS feed for the blog: lets readers subscribe and helps search engines find new posts fast.
+const rssDate = (d) => new Date(`${d}T09:00:00Z`).toUTCString();
+const items = posts.map(
+  (p) => `    <item>
+      <title>${escape(p.title)}</title>
+      <link>${SITE_URL}/blog/${p.slug}</link>
+      <guid isPermaLink="true">${SITE_URL}/blog/${p.slug}</guid>
+      <pubDate>${rssDate(p.date)}</pubDate>
+      <category>${escape(p.category)}</category>
+      <description>${escape(p.description)}</description>
+    </item>`,
+);
+fs.mkdirSync(path.join(dist, "blog"), { recursive: true });
+fs.writeFileSync(
+  path.join(dist, "blog", "rss.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArrLink Blog</title>
+    <link>${SITE_URL}/blog</link>
+    <atom:link href="${SITE_URL}/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Guides on AI agents, generative AI, MVPs, custom software, SaaS and manufacturing software.</description>
+    <language>en</language>
+${items.join("\n")}
+  </channel>
+</rss>
+`,
+);
+console.log(`blog/rss.xml: ${items.length} posts`);

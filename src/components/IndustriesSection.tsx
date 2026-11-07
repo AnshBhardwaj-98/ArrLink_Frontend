@@ -38,7 +38,7 @@ const industries = [
     icon: Factory,
     title: "Manufacturing",
     slug: "manufacturing",
-    description: "Predictive maintenance, quality inspection with computer vision and production analytics.",
+    description: "A unified data ontology, ERP integration, AI T&A tracking, traceability and production analytics.",
   },
 ];
 

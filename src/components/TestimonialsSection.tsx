@@ -146,8 +146,8 @@ const TestimonialsSection = () => {
             <span className="font-serif text-[1.08em] font-normal">at scale.</span>
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-foreground/55 md:text-base">
-            Fifty-plus organizations across Asia rely on our engineering. A glimpse of the work in
-            their words.
+            Founders, research teams and product companies rely on our engineering. A glimpse of
+            the work in their words.
           </p>
         </div>
 

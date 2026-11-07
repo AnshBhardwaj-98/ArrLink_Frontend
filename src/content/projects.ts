@@ -32,15 +32,13 @@ export const projects: Project[] = [
     hrefLabel: "desk.arrlink.com",
   },
   {
-    id: "vnytros",
-    client: "ArrLink product",
-    title: "Vnytros — DNS & email deliverability automation",
-    category: "Developer Platform · AI tools",
+    id: "manufacturing-platform",
+    client: "Manufacturing client",
+    title: "Manufacturing data ontology & ERP overlay platform",
+    category: "Manufacturing · AI Agents",
     description:
-      "Diagnoses broken SPF, DKIM and DMARC records and writes the fix straight into DNS through the registrar. One engine serves a REST API, free tool pages and 25 MCP tools for AI agents, across 693 Domain Connect provider templates.",
-    stack: ["Go", "Domain Connect", "MCP server", "Cloudflare Workers"],
-    href: "https://vnytros.dev",
-    hrefLabel: "vnytros.dev",
+      "A multi-tenant platform built on a 300+ table manufacturing data ontology that runs alongside the client's ERP — two-way sync with field-level ownership, AI that turns buyer e-mails into T&A updates, and full traceability from buyer PO to shipment.",
+    stack: ["PostgreSQL", "Go", "Next.js", "Claude", "ERP sync"],
   },
   {
     id: "krinos-ai",

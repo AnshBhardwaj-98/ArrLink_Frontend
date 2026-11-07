@@ -289,7 +289,7 @@ export const services: Service[] = [
       { title: "Architecture first", desc: "Every system starts with a deliberate data model and APIs designed to evolve without breaking." },
       { title: "No lock-in", desc: "You own the code and infrastructure, with documentation your team can work from." },
     ],
-    projectIds: ["vnytros", "conectdesk", "krinos-ai", "sharda-fake-reviews"],
+    projectIds: ["conectdesk", "imagine-bo", "krinos-ai", "sharda-fake-reviews"],
     industrySlugs: ["logistics", "finance", "manufacturing", "education"],
     faqs: [
       {
@@ -366,7 +366,7 @@ export const services: Service[] = [
       { title: "Platform done right early", desc: "Tenancy, billing and permissions designed up front, so growth doesn't force a rewrite." },
       { title: "AI with healthy margins", desc: "We design AI features with caching, model routing and usage limits so they stay profitable." },
     ],
-    projectIds: ["conectdesk", "vnytros", "imagine-bo", "krinos-ai"],
+    projectIds: ["conectdesk", "imagine-bo", "krinos-ai"],
     industrySlugs: ["education", "ecommerce", "finance"],
     faqs: [
       {

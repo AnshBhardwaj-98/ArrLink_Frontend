@@ -11,6 +11,8 @@ import ServicesHub from "./pages/ServicesHub";
 import ServiceDetail from "./pages/ServiceDetail";
 import IndustriesHub from "./pages/IndustriesHub";
 import IndustryDetail from "./pages/IndustryDetail";
+import BlogIndex from "./pages/BlogIndex";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 /** Router-agnostic app shell: main.tsx wraps it in BrowserRouter, entry-server.tsx in StaticRouter. */
@@ -26,6 +28,9 @@ const App = () => (
       <Route path="/services/:slug" element={<ServiceDetail />} />
       <Route path="/industries" element={<IndustriesHub />} />
       <Route path="/industries/:slug" element={<IndustryDetail />} />
+      <Route path="/blog" element={<BlogIndex />} />
+      <Route path="/blog/category/:category" element={<BlogIndex />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="*" element={<NotFound />} />

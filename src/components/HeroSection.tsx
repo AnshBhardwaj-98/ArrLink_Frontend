@@ -21,7 +21,6 @@ const ramp = (p: number, start: number, end: number) => clamp01((p - start) / (e
 
 const stats = [
   { value: "4–8 wks", label: "Idea to production release" },
-  { value: "50+", label: "Clients served" },
   { value: "100%", label: "Code & IP ownership" },
 ];
 
@@ -247,7 +246,7 @@ const HeroSection = () => {
               From first prompt to{" "}
               <span className="font-serif text-[1.08em] font-normal text-[hsl(var(--primary-container))]">production.</span>
             </p>
-            <div className="grid w-full max-w-3xl grid-cols-3 gap-2.5 sm:gap-6">
+            <div className="grid w-full max-w-xl grid-cols-2 gap-2.5 sm:gap-6">
               {stats.map((s) => (
                 <div key={s.label} className="rounded-xl border border-white/10 bg-white/[0.04] px-2 py-4 backdrop-blur-md sm:px-5 sm:py-5">
                   <p className="font-display text-lg font-bold tabular-nums text-white sm:text-3xl">{s.value}</p>
