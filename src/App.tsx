@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
@@ -9,8 +9,6 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ServicesHub from "./pages/ServicesHub";
 import ServiceDetail from "./pages/ServiceDetail";
-import IndustriesHub from "./pages/IndustriesHub";
-import IndustryDetail from "./pages/IndustryDetail";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -26,8 +24,8 @@ const App = () => (
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<ServicesHub />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
-      <Route path="/industries" element={<IndustriesHub />} />
-      <Route path="/industries/:slug" element={<IndustryDetail />} />
+      <Route path="/industries" element={<Navigate to="/services" replace />} />
+      <Route path="/industries/:slug" element={<Navigate to="/services" replace />} />
       <Route path="/blog" element={<BlogIndex />} />
       <Route path="/blog/category/:category" element={<BlogIndex />} />
       <Route path="/blog/:slug" element={<BlogPost />} />

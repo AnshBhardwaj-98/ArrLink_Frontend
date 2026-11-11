@@ -1,48 +1,15 @@
 import { Plus } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
-import AmbientFloor from "./AmbientFloor";
 import JsonLd from "./JsonLd";
 import type { FAQ } from "@/content/services";
 
-const homeFaqs: FAQ[] = [
-  {
-    q: "What does ArrLink do?",
-    a: "ArrLink is an AI-accelerated software development company. We design, build and run custom software, generative AI applications, AI agents, SaaS products and mobile apps for startups and enterprises.",
-  },
-  {
-    q: "How fast can you build an MVP?",
-    a: "Most MVPs go from kickoff to a production release in 4–8 weeks. Because our engineers use AI across design, coding and testing, we ship faster than traditional agencies without cutting corners on architecture or security.",
-  },
-  {
-    q: "How much does custom software or AI development cost?",
-    a: "Every engagement is scoped to your goals, so there's no fixed price list. After a free strategy call we send a tailored proposal with timeline and cost. AI-accelerated delivery typically brings custom software close to the cost of packaged SaaS.",
-  },
-  {
-    q: "Can you take our AI pilot or prototype to production?",
-    a: "Yes. A large part of our work is hardening AI proofs-of-concept — adding evaluation, guardrails, integrations, monitoring and scalable infrastructure — so they work reliably for real users.",
-  },
-  {
-    q: "Which AI models and technologies do you work with?",
-    a: "We work with leading LLMs including Claude, GPT and Gemini, as well as open-source models that can run privately on your own infrastructure. Our stack spans React, Node.js, Python, cloud platforms (AWS, GCP, Azure) and modern data tooling.",
-  },
-  {
-    q: "Do we own the code and IP?",
-    a: "Yes. You own 100% of the source code, models and intellectual property we build for you. No lock-in and no per-seat licensing.",
-  },
-  {
-    q: "Do you work with international clients?",
-    a: "Yes. We work with clients worldwide and run engagements remotely with overlapping working hours, weekly demos and a dedicated point of contact.",
-  },
-];
-
-
-const FAQSection = ({ faqs = homeFaqs }: { faqs?: FAQ[] }) => {
+const FAQSection = ({ faqs }: { faqs: FAQ[] }) => {
   const headerRef = useReveal<HTMLDivElement>();
   const listRef = useReveal<HTMLDivElement>();
 
   return (
     <section id="faq" className="relative py-32 px-6 bg-background overflow-hidden">
-      <AmbientFloor />
+
       <JsonLd
         data={{
           "@context": "https://schema.org",

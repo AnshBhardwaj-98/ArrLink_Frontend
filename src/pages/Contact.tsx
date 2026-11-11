@@ -1,196 +1,57 @@
+import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { ArrowUpRight, CheckCircle2, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { useSEO } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AmbientFloor from "@/components/AmbientFloor";
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-
-const Contact = () => {
-  useSEO("/contact");
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: form.name,
-          email: form.email,
-          company: form.company,
-          message: form.message,
-          cc_emails: import.meta.env.VITE_CC_EMAILS || "",
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      );
-
-      setSubmitted(true);
-      setForm({ name: "", email: "", company: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      alert("Failed to send message. Please try again.");
-    }
-
-    setLoading(false);
-  };
-
-  return (
-    <div className="min-h-screen bg-background font-sans">
-      <Navbar />
-      <main className="relative pt-40 pb-32 px-6 overflow-hidden">
-        <AmbientFloor />
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="section-marker mb-6 justify-center">
-              <span className="h-px w-6 bg-foreground/40" />
-              <span>Collaboration</span>
-              <span className="h-px w-6 bg-foreground/40" />
-            </div>
-            <h1 className="text-4xl md:text-6xl text-foreground font-display font-bold mb-6 tracking-tighter">
-              Let&apos;s{" "}
-              <span className="font-serif font-normal text-[1.08em]">Talk</span>
-            </h1>
-            <div className="w-16 h-px bg-foreground/20 mx-auto mb-8" />
-            <p className="text-foreground/60 text-lg max-w-xl mx-auto leading-relaxed font-normal">
-              Tell us about your system requirements. We&apos;ll respond within
-              24 hours with a preliminary assessment.
-            </p>
-          </div>
-
-          <div className="bg-surface-container/40 backdrop-blur-md border border-foreground/10 p-8 md:p-12 rounded-3xl">
-            {submitted ? (
-              <div className="py-20 text-center animate-in fade-in zoom-in-95 duration-500">
-                <div className="mb-6 inline-block p-4 bg-foreground/5 rounded-full border border-foreground/15">
-                  <div className="w-8 h-8 text-foreground border-2 border-foreground/40 rounded-full flex items-center justify-center font-bold">
-                    ✓
-                  </div>
-                </div>
-                <h2 className="text-2xl font-display font-bold text-foreground mb-4">
-                  Inquiry Received
-                </h2>
-                <p className="text-foreground/60 font-normal max-w-sm mx-auto">
-                  Thank you for reaching out. Our team will review your details
-                  and contact you within one business day.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-10 text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/60 border-b border-foreground/30 pb-1 hover:text-foreground hover:border-foreground transition-all"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 text-black">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/70 ml-1">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Arjun Sharma"
-                      value={form.name}
-                      onChange={(e) =>
-                        setForm({ ...form, name: e.target.value })
-                      }
-                      className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] tracking-[0.2em] uppercase font-medium text-foreground/70 ml-1">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="arjun.sharma@tata.com"
-                      value={form.email}
-                      onChange={(e) =>
-                        setForm({ ...form, email: e.target.value })
-                      }
-                      className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-foreground/70 ml-1">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Tata Consultancy Services"
-                    value={form.company}
-                    onChange={(e) =>
-                      setForm({ ...form, company: e.target.value })
-                    }
-                    className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] tracking-[0.2em] uppercase font-bold text-foreground/70 ml-1">
-                    Project Brief
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    placeholder="Briefly describe your technical objectives, current infrastructure, and any specific scale requirements..."
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
-                    className="w-full bg-surface-container-highest/20 border border-foreground/10 px-5 py-4 text-sm font-normal text-foreground focus:outline-none focus:border-foreground/40 focus:bg-surface-container-highest/60 transition-all rounded-xl resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full md:w-auto bg-foreground text-background px-12 py-5 text-[10px] tracking-[0.2em] uppercase font-bold hover:bg-foreground/90 transition-all duration-300 rounded-md disabled:opacity-50"
-                >
-                  {loading ? "Sending..." : "Submit Inquiry"}
-                </button>
-              </form>
-            )}
-          </div>
-
-          <div className="mt-24 pt-16 border-t border-foreground/10 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-foreground/40 mb-4">
-                Email Us
-              </p>
-              <a
-                href="mailto:info@arrlink.com"
-                className="text-sm font-normal text-foreground/60 hover:text-foreground transition-colors"
-              >
-                info@arrlink.com{" "}
-              </a>
-            </div>
-            <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-foreground/40 mb-4">
-                Availability
-              </p>
-              <p className="text-sm font-normal text-foreground/60">
-                Mon — Fri, 9am — 6pm EST
-              </p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-export default Contact;
+export default function Contact() {
+    useSEO("/contact");
+    const [searchParams] = useSearchParams();
+    const projectOptions: Record<string, string> = { "new-product": "Launch a first product", "existing-product": "Improve existing software", automation: "Automate a workflow" };
+    const initialProject = searchParams.get("project") ?? "";
+    const [projectType, setProjectType] = useState(projectOptions[initialProject] ? initialProject : "");
+    const [timeZone, setTimeZone] = useState("");
+    const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        if (!import.meta.env.VITE_EMAILJS_SERVICE_ID || !import.meta.env.VITE_EMAILJS_TEMPLATE_ID || !import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+            setError("The contact form is temporarily unavailable. Please email info@arrlink.com with your project details.");
+            return;
+        }
+        setLoading(true);
+        try {
+            await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, { ...form, message: `${form.message}\n\nProject: ${projectOptions[projectType] || "Not specified"}\nTime zone / meeting preferences: ${timeZone || "Not specified"}`, cc_emails: import.meta.env.VITE_CC_EMAILS || "" }, import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+            setSubmitted(true);
+            setForm({ name: "", email: "", company: "", message: "" });
+            setProjectType("");
+            setTimeZone("");
+        }
+        catch {
+            setError("We couldn’t send your message. Please try again or email info@arrlink.com.");
+        }
+        finally {
+            setLoading(false);
+        }
+    };
+    return <><Navbar /><main id="main-content" className="wrap contact-layout section">
+    <div className="contact-intro"><p className="eyebrow">LET’S START A CONVERSATION</p><h1>What are you<br />thinking <span>about?</span></h1><p>A product idea, a workflow that needs fixing, or a platform ready for its next chapter. Tell us a little about it.</p><a className="text-link" href="mailto:info@arrlink.com"><Mail size={18}/> info@arrlink.com <ArrowUpRight size={16}/></a><div className="contact-next"><p className="eyebrow">WHAT HAPPENS NEXT</p><ol><li><span>01</span> We read through your project details.</li><li><span>02</span> We get in touch to understand your goals.</li><li><span>03</span> Together, we work out a practical next step.</li></ol></div></div>
+    <div className="contact-panel">{submitted ? <div className="contact-success" role="status"><CheckCircle2 size={44}/><h2>Inquiry Received</h2><p>Thanks for sharing your idea. Our team will review your details and get in touch.</p><button className="button" onClick={() => setSubmitted(false)}>Send another message <ArrowUpRight size={17}/></button></div> :
+            <form onSubmit={handleSubmit} aria-busy={loading}>
+        <h2>Tell us about your project.</h2><p>Fields marked * are required.</p>
+        <div className="form-row"><div><label htmlFor="name">Your name *</label><input id="name" name="name" autoComplete="name" required maxLength={120} placeholder="Your full name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}/></div><div><label htmlFor="email">Email address *</label><input id="email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder="you@company.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}/></div></div>
+        <label htmlFor="company">Company</label><input id="company" name="company" autoComplete="organization" maxLength={200} placeholder="Your company name" value={form.company} onChange={e => setForm({ ...form, company: e.target.value })}/>
+        <label htmlFor="project-type">What kind of help do you need?</label>
+        <select id="project-type" value={projectType} onChange={e => setProjectType(e.target.value)}><option value="">Not sure yet — let’s discuss</option>{Object.entries(projectOptions).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select>
+        <label htmlFor="time-zone">Time zone & preferred meeting hours <span>(optional)</span></label>
+        <input id="time-zone" maxLength={200} placeholder="e.g. US Eastern, weekday mornings" value={timeZone} onChange={e => setTimeZone(e.target.value)} />
+        <label htmlFor="message">What would you like to build? *</label><textarea id="message" name="message" required maxLength={6000} rows={6} placeholder="Briefly describe your technical objectives, your idea, or the problem you’d like to solve..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}/>
+        {error && <p role="alert" className="form-error">{error}</p>}
+        <p className="form-privacy">We’ll use your details to respond to your inquiry. Read our <Link to="/privacy">privacy policy</Link>.</p><button type="submit" disabled={loading} className="button">{loading ? "Sending..." : "Submit Inquiry"}<ArrowUpRight size={18}/></button>
+      </form>}</div>
+  </main><Footer /></>;
+}

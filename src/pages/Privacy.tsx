@@ -1,15 +1,14 @@
 import { useSEO } from "@/hooks/use-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AmbientFloor from "@/components/AmbientFloor";
 
 const Privacy = () => {
   useSEO("/privacy");
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      <main className="relative pt-40 pb-32 px-6 overflow-hidden">
-        <AmbientFloor />
+      <main id="main-content" className="relative pt-40 pb-32 px-6 overflow-hidden">
+
 
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="mb-16">

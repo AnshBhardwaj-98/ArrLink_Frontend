@@ -1,151 +1,17 @@
-import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-
-const links: { to: string; label: string; external?: boolean }[] = [
-  { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/#work", label: "Work" },
-  { to: "/industries", label: "Industries" },
-  { to: "/about", label: "About" },
-  { to: "/blog", label: "Blog" },
-];
-
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const { pathname, hash } = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isActive = (to: string) =>
-    to === "/" ? pathname === "/" && !hash : !to.includes("#") && pathname.startsWith(to);
-
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass border-b border-border py-2.5" : "bg-transparent py-4"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link
-          to="/"
-          className="group inline-flex items-center gap-2.5 text-lg tracking-tighter font-display font-bold"
-          aria-label="ArrLink home"
-        >
-          <img
-            src="https://public.assets.vnytros.dev/arrlink.logo.png"
-            alt=""
-            className="h-7 w-auto select-none transition-transform duration-500 group-hover:rotate-[8deg]"
-            draggable={false}
-          />
-          <span className="text-foreground">ArrLink</span>
-        </Link>
-
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
-          {links.map((link) => {
-            const active = !link.external && isActive(link.to);
-            const content = (
-              <>
-                <span
-                  className={
-                    active
-                      ? "text-foreground"
-                      : "text-foreground/60 group-hover:text-foreground"
-                  }
-                >
-                  {link.label}
-                </span>
-                <span
-                  aria-hidden
-                  className={`absolute -bottom-1.5 left-0 right-0 h-px bg-foreground transition-all duration-300 ${
-                    active
-                      ? "opacity-100 scale-x-100"
-                      : "opacity-0 scale-x-0 group-hover:opacity-60 group-hover:scale-x-100"
-                  }`}
-                  style={{ transformOrigin: "left center" }}
-                />
-              </>
-            );
-            const className =
-              "relative group text-[11px] tracking-[0.25em] uppercase font-medium transition-colors duration-300";
-            return link.external ? (
-              <a key={link.to} href={link.to} className={className}>
-                {content}
-              </a>
-            ) : (
-              <Link key={link.to} to={link.to} className={className}>
-                {content}
-              </Link>
-            );
-          })}
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-1.5 bg-foreground text-background
-                       px-4 py-2 text-[11px] tracking-[0.18em] uppercase font-bold rounded-md
-                       hover:bg-foreground/90 hover:-translate-y-0.5 transition-all duration-300"
-          >
-            <span>Let&apos;s Talk</span>
-            <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-          </Link>
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-foreground p-1"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border px-6 py-10 flex flex-col gap-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-300">
-          {links.map((link) => {
-            const active = !link.external && isActive(link.to);
-            const className = `text-sm tracking-[0.2em] uppercase font-bold text-center transition-colors ${
-              active ? "text-foreground" : "text-foreground/70"
-            }`;
-            return link.external ? (
-              <a
-                key={link.to}
-                href={link.to}
-                onClick={() => setOpen(false)}
-                className={className}
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className={className}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="bg-foreground text-background px-8 py-4 text-xs tracking-[0.1em] uppercase font-bold text-center rounded-md"
-          >
-            Let&apos;s Talk
-          </Link>
-        </div>
-      )}
-    </nav>
-  );
-};
-
-export default Navbar;
+const links = [{ to: "/services", label: "Services" }, { to: "/#technology", label: "Technology" }, { to: "/#work", label: "Our work" }, { to: "/about", label: "About us" }, { to: "/blog", label: "Insights" }];
+export default function Navbar() {
+    const [open, setOpen] = useState(false);
+    const { pathname, hash } = useLocation();
+    useEffect(() => { setOpen(false); }, [pathname, hash]);
+    useEffect(() => { const close = (e: KeyboardEvent) => { if (e.key === "Escape")
+        setOpen(false); }; document.addEventListener("keydown", close); return () => document.removeEventListener("keydown", close); }, []);
+    return <><a className="skip-link" href="#main-content">Skip to content</a><header className="site-header"><div className="wrap nav-inner">
+    <Link to="/" className="wordmark" aria-label="ArrLink home"><img className="brand-logo" src="/brand-mark.svg" width="35" height="35" alt="" />arrlink<span className="brand-dot">.</span></Link>
+    <nav className="desktop-nav" aria-label="Main navigation">{links.map(l => <Link key={l.to} to={l.to} aria-current={pathname === l.to ? "page" : undefined}>{l.label}</Link>)}</nav>
+    <Link to="/contact" className="button nav-cta">Let’s talk <ArrowUpRight size={17}/></Link>
+    <button className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-navigation">{open ? <X /> : <Menu />}</button>
+  </div>{open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{links.map(l => <Link onClick={() => setOpen(false)} key={l.to} to={l.to}>{l.label}</Link>)}<Link to="/contact">Let’s talk ↗</Link></nav>}</header></>;
+}

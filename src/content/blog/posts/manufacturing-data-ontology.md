@@ -118,7 +118,7 @@ You don't need 300 tables on day one. A practical path:
 4. **Add one high-value capability** on top — T&A tracking or AI e-mail intake — and measure the hours it saves.
 5. **Extend module by module** as each one proves its value.
 
-If you'd like help designing or implementing this, see our [manufacturing software and AI](/industries/manufacturing) work and our [custom software development](/services/custom-software-development) services.
+If you'd like help designing or implementing this, see our [manufacturing software and AI](/#work) work and our [custom software development](/services/custom-software-development) services.
 
 ## Frequently asked questions
 

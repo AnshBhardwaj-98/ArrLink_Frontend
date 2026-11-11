@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AmbientFloor from "@/components/AmbientFloor";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQSection";
@@ -101,7 +100,7 @@ const Article = ({ post }: { post: PostMeta }) => {
           wordCount: post.wordCount,
           keywords: [post.keyword, ...post.tags].join(", "),
           articleSection: category?.name,
-          image: "https://public.assets.vnytros.dev/arrlink.logo.png",
+          image: "https://www.arrlink.com/images/social-preview.png",
           author:
             post.author === "ArrLink Team"
               ? { "@id": `${SITE_URL}/#organization` }
@@ -110,10 +109,10 @@ const Article = ({ post }: { post: PostMeta }) => {
         }}
       />
       <Navbar />
-      <main>
+      <main id="main-content">
         <article>
           <header className="relative overflow-hidden px-6 pb-14 pt-36">
-            <AmbientFloor />
+
             <div className="relative z-10 mx-auto max-w-6xl px-4">
               <div className="max-w-4xl">
                 <Breadcrumbs

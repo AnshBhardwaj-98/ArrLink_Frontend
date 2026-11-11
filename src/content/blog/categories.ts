@@ -55,7 +55,7 @@ export const blogCategories: BlogCategory[] = [
     name: "Manufacturing",
     description:
       "Manufacturing data ontologies, ERP integration, T&A automation, traceability and AI on the factory floor.",
-    link: { to: "/industries/manufacturing", label: "Manufacturing software & AI" },
+    link: { to: "/services/custom-software-development", label: "Custom software development" },
   },
 ];
 

@@ -72,10 +72,9 @@ for (const route of Object.keys(routeMeta)) {
 }
 
 // Sitemap is generated from the same route list, so new pages can never be missed.
-const today = new Date().toISOString().slice(0, 10);
 const urls = Object.entries(routeMeta)
   .filter(([, meta]) => !meta.noindex)
-  .map(([route, meta]) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${meta.lastmod ?? today}</lastmod>\n  </url>`);
+  .map(([route, meta]) => `  <url>\n    <loc>${SITE_URL}${route}</loc>\n${meta.lastmod ? `    <lastmod>${meta.lastmod}</lastmod>\n` : ""}  </url>`);
 fs.writeFileSync(
   path.join(dist, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`,

@@ -18,7 +18,6 @@ export type Service = {
   stack: string[];
   whyUs: { title: string; desc: string }[];
   projectIds: string[];
-  industrySlugs: string[];
   faqs: FAQ[];
 };
 
@@ -85,7 +84,6 @@ export const services: Service[] = [
       { title: "You own everything", desc: "Source code, prompts, evaluation sets and infrastructure are yours. No per-seat licensing, no lock-in." },
     ],
     projectIds: ["conectdesk", "imagine-bo", "krinos-ai"],
-    industrySlugs: ["ecommerce", "healthcare", "finance", "logistics"],
     faqs: [
       {
         q: "What is an AI agent and how is it different from a chatbot?",
@@ -153,7 +151,6 @@ export const services: Service[] = [
       { title: "Built to keep, not to rewrite", desc: "Clean architecture and documentation mean your MVP becomes version 1, not a throwaway prototype." },
     ],
     projectIds: ["imagine-bo", "mythyaverse-ecg"],
-    industrySlugs: ["healthcare", "education", "ecommerce"],
     faqs: [
       {
         q: "How long does it take to build an MVP?",
@@ -221,7 +218,6 @@ export const services: Service[] = [
       { title: "Your data stays yours", desc: "Private deployments, no training on your data, and architecture designed around your compliance requirements." },
     ],
     projectIds: ["conectdesk", "imagine-bo", "krinos-ai", "mythyaverse-ecg"],
-    industrySlugs: ["healthcare", "finance", "education"],
     faqs: [
       {
         q: "What are generative AI development services?",
@@ -290,7 +286,6 @@ export const services: Service[] = [
       { title: "No lock-in", desc: "You own the code and infrastructure, with documentation your team can work from." },
     ],
     projectIds: ["conectdesk", "imagine-bo", "krinos-ai", "sharda-fake-reviews"],
-    industrySlugs: ["logistics", "finance", "manufacturing", "education"],
     faqs: [
       {
         q: "What is custom software development?",
@@ -367,7 +362,6 @@ export const services: Service[] = [
       { title: "AI with healthy margins", desc: "We design AI features with caching, model routing and usage limits so they stay profitable." },
     ],
     projectIds: ["conectdesk", "imagine-bo", "krinos-ai"],
-    industrySlugs: ["education", "ecommerce", "finance"],
     faqs: [
       {
         q: "What does a SaaS development company do?",

@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AmbientFloor from "@/components/AmbientFloor";
 import Breadcrumbs, { type Crumb } from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTASection from "@/components/CTASection";
@@ -44,9 +43,9 @@ const BlogIndex = () => {
         }}
       />
       <Navbar />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden px-6 pb-20 pt-36">
-          <AmbientFloor />
+
           <div className="relative z-10 mx-auto max-w-7xl px-4">
             <Breadcrumbs items={crumbs} />
             <h1 className="mb-7 max-w-5xl text-balance font-display text-4xl font-bold leading-[1.04] tracking-tighter text-foreground md:text-6xl lg:text-7xl">

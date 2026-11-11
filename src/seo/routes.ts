@@ -1,5 +1,4 @@
 import { services } from "@/content/services";
-import { industries } from "@/content/industries";
 import { posts, activeCategories } from "@/content/blog";
 
 export const SITE_URL = "https://www.arrlink.com";
@@ -10,26 +9,26 @@ export type RouteMeta = {
   noindex?: boolean;
   /** Open Graph type; defaults to "website". */
   type?: "website" | "article";
-  /** Last content change (YYYY-MM-DD) for the sitemap; defaults to the build date. */
+  /** Last content change (YYYY-MM-DD) for the sitemap; omitted when unknown. */
   lastmod?: string;
 };
 
 /** Single source of truth for per-route meta — used at runtime and by the prerender script. */
 export const routeMeta: Record<string, RouteMeta> = {
   "/": {
-    title: "AI Development Company | Custom Software & SaaS | ArrLink",
+    title: "Custom Software Development Company | ArrLink",
     description:
-      "ArrLink is an AI development company building custom software, AI agents, generative AI apps, SaaS products and MVPs — production-ready in weeks.",
+      "ArrLink builds custom software, web applications, SaaS products and AI solutions. A collaborative development partner from your first idea to launch and beyond.",
   },
   "/about": {
-    title: "About ArrLink | AI-Accelerated Software Development",
+    title: "About ArrLink | Your Software Development Partner",
     description:
-      "Meet ArrLink: an AI development company engineering custom software, generative AI and SaaS platforms on deliberate architecture built to scale.",
+      "Meet ArrLink, your software development partner for custom applications, SaaS products and AI solutions. Thoughtful engineering and clear communication.",
   },
   "/contact": {
-    title: "Contact ArrLink | Free AI & Software Strategy Call",
+    title: "Contact ArrLink | Let’s Build Your Next Product",
     description:
-      "Tell us what you're building. Get a free strategy call and a tailored proposal for your custom software, AI agent or SaaS project within 24 hours.",
+      "Tell us about your idea, existing product or business challenge. Talk to ArrLink about custom software, SaaS development and AI automation.",
   },
   "/privacy": {
     title: "Privacy Policy | ArrLink",
@@ -40,20 +39,12 @@ export const routeMeta: Record<string, RouteMeta> = {
     description: "Terms governing the use of the ArrLink website and services.",
   },
   "/services": {
-    title: "AI & Software Development Services | ArrLink",
+    title: "Custom Software, SaaS & AI Development Services | ArrLink",
     description:
       "Explore ArrLink's AI and software development services: AI agent development, AI MVP development, generative AI, custom software and SaaS development.",
   },
   ...Object.fromEntries(
     services.map((s) => [`/services/${s.slug}`, { title: s.metaTitle, description: s.metaDescription }]),
-  ),
-  "/industries": {
-    title: "Industries We Serve | AI & Software Solutions | ArrLink",
-    description:
-      "AI and custom software development for healthcare, finance & fintech, e-commerce, logistics, education and manufacturing.",
-  },
-  ...Object.fromEntries(
-    industries.map((i) => [`/industries/${i.slug}`, { title: i.metaTitle, description: i.metaDescription }]),
   ),
   "/blog": {
     title: "Blog | AI, Software & SaaS Engineering Insights | ArrLink",

@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AmbientFloor from "@/components/AmbientFloor";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import FAQSection from "@/components/FAQSection";
@@ -11,7 +10,6 @@ import { ProjectCard } from "@/components/ProjectsSection";
 import { SectionHeader, LinkCard } from "@/components/PageBlocks";
 import NotFound from "./NotFound";
 import { serviceBySlug, services } from "@/content/services";
-import { industryBySlug } from "@/content/industries";
 import { projectById } from "@/content/projects";
 import { useSEO } from "@/hooks/use-seo";
 import { SITE_URL } from "@/seo/routes";
@@ -24,7 +22,6 @@ const ServiceDetail = () => {
 
   const url = `${SITE_URL}/services/${service.slug}`;
   const work = service.projectIds.map(projectById).filter((p) => p !== undefined);
-  const relatedIndustries = service.industrySlugs.map(industryBySlug).filter((i) => i !== undefined);
   const otherServices = services.filter((s) => s.slug !== service.slug);
 
   return (
@@ -55,10 +52,10 @@ const ServiceDetail = () => {
         }}
       />
       <Navbar />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="relative pt-36 pb-24 px-6 overflow-hidden">
-          <AmbientFloor />
+
           <div className="relative z-10 max-w-7xl mx-auto px-4">
             <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: service.name, to: `/services/${service.slug}` }]} />
             <h1 className="max-w-5xl text-4xl md:text-6xl lg:text-7xl leading-[1.04] text-foreground font-display font-bold tracking-tighter text-balance mb-7">
@@ -184,15 +181,7 @@ const ServiceDetail = () => {
 
         {/* Internal links */}
         <section className="relative py-24 px-6 bg-surface-container-low border-t border-foreground/10">
-          <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-14">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground tracking-tight mb-6">Industries we serve</h2>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {relatedIndustries.map((ind) => (
-                  <LinkCard key={ind.slug} to={`/industries/${ind.slug}`} title={ind.name} />
-                ))}
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto px-4 grid gap-14">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground tracking-tight mb-6">Explore other services</h2>
               <div className="grid sm:grid-cols-2 gap-3">
