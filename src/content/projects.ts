@@ -19,6 +19,8 @@ export const projects: Project[] = [
     description:
       "An AI platform that turns a single prompt into a fully deployed, production-ready application — from generated code to hosting.",
     stack: ["LLM orchestration", "Code generation", "Cloud deployment"],
+    href: "https://www.imagine.bo",
+    hrefLabel: "imagine.bo",
   },
   {
     id: "conectdesk",

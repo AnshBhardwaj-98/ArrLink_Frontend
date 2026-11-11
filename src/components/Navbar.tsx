@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-const links = [{ to: "/services", label: "Services" }, { to: "/#technology", label: "Technology" }, { to: "/#work", label: "Our work" }, { to: "/about", label: "About us" }, { to: "/blog", label: "Insights" }];
+const links = [{ to: "/services", label: "Services" }, { to: "/#technology", label: "Technology" }, { to: "/#work", label: "Our work" }, { to: "/about", label: "About us" }, { to: "/blog", label: "Blog" }];
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const { pathname, hash } = useLocation();
